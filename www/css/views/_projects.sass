@@ -1,0 +1,65 @@
+.projects
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+    padding: 200px 50px 100px
+    background: 
+        image: url('../img/introbg.jpg')
+        size: cover
+        position: center center
+        attachment: fixed
+    
+    .project-container
+        position: relative
+        width: 700px
+        height: 400px
+        margin: 0 10px 50px
+        overflow: hidden
+        
+        .project-img
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            transition: all 500ms ease-in-out
+            transform: scale(1.1)
+            img
+                width: 100%
+                height: 100%
+        
+        .overlay
+            position: absolute
+            top: 0
+            right: -100%
+            width: 50%
+            height: 100%
+            background: rgba(23,161,159,1)
+            transition: all 300ms ease-in-out
+            display: flex
+            align-items: center
+            flex-direction: column
+            color: #fff
+            padding: 10px
+            
+            .read-more
+                position: absolute
+                bottom: 20px
+                width: 100%
+                height: auto
+                font-size: 14px
+                color: #fff
+                display: flex
+                align-items: center
+                justify-content: center
+                cursor: pointer
+                i
+                    font-size: 30px
+                    margin-left: 10px
+            
+    .project-container:hover
+        .project-img
+            transform: scale(1)
+        .overlay
+            right: 0
