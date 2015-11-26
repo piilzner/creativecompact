@@ -5,17 +5,18 @@
     flex-wrap: wrap
     padding: 200px 50px 100px
     background: 
-        image: url('../img/introbg.jpg')
+        image: url('../img/projectsbg.jpg')
         size: cover
         position: center center
         attachment: fixed
     
     .project-container
         position: relative
-        width: 700px
-        height: 400px
+        width: 500px
+        height: 300px
         margin: 0 10px 50px
         overflow: hidden
+        box-shadow: 0 5px 5px rgba(0,0,0,0.4)
         
         .project-img
             position: absolute
@@ -55,8 +56,12 @@
                 justify-content: center
                 cursor: pointer
                 i
-                    font-size: 30px
-                    margin-left: 10px
+                    width: 40px
+                    heigth: 20px
+                    img
+                        width: 100%
+                        height: 100%
+                    
             
     .project-container:hover
         .project-img

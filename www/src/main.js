@@ -21,7 +21,22 @@ app.config(function($locationProvider, $routeProvider) {
 app.controller('aboutCtrl', ["$scope", function($scope){
     
     
+      
     
+  $(document).ready(function() {
+    $("body").on("scroll", function( e ) {
+
+        e.preventDefault();
+
+        $("body, html").animate({ 
+            scrollTop: $( $(this).attr('section') ).offset().top 
+        }, 600);
+
+    });
+});
+    
+    
+
     
 }]);
 app.controller('contactCtrl', ["$scope", function($scope){
@@ -60,19 +75,19 @@ app.controller('projectsCtrl', ["$scope", "$http", function($scope, $http){
           
       },
       {
-          title : "projekt 3",
+          title : "projekt 4",
           desc : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, omnis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, omnis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, omnis..",
           image : "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/fc406c30756703.563141cd14610.png"
           
       },
       {
-          title : "projekt 3",
+          title : "projekt 5",
           desc : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, omnis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, omnis..",
           image : "https://mir-s3-cdn-cf.behance.net/project_modules/1400/aa2c2b27964909.5636d81d30a60.jpg"
           
       },
       {
-          title : "projekt 3",
+          title : "projekt 6",
           desc : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, omnis..",
           image : "https://scontent-arn2-1.xx.fbcdn.net/hphotos-xpt1/v/t35.0-12/12287191_10153118972746916_1754428541_o.jpg?oh=df2d5fe59afa174ebf49171514ec2bbc&oe=5657AFF0"
           
