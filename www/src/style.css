@@ -150,11 +150,6 @@
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -162,6 +157,8 @@
           flex-direction: column; }
 
 .workers {
+  position: relative;
+  color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -174,24 +171,81 @@
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: #fff;
-  font-size: 40px;
   background-image: url("../img/introbg.jpg");
   background-size: cover;
   background-position: center center;
-  background-attachment: fixed;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
+  background-attachment: fixed; }
+  .workers .workers-title {
+    position: absolute;
+    top: 30px;
+    left: 200px;
+    width: auto;
+    height: auto;
+    font-size: 150px;
+    opacity: 0.6; }
+  .workers .profile-wrap {
+    max-width: 960px;
+    height: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .workers .profile-wrap .profile-box {
+      position: relative;
+      width: 400px;
+      height: 300px;
+      border: 1px solid #fff;
+      margin-right: 30px;
+      overflow: hidden; }
+      .workers .profile-wrap .profile-box img {
+        width: 100%;
+        height: 100%;
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+                transform: scale(1);
+        -webkit-transition: all 500ms ease-in-out;
+        transition: all 500ms ease-in-out; }
+      .workers .profile-wrap .profile-box .profile-overlay {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        background: rgba(0, 0, 0, 0.8);
+        -webkit-transition: all 300ms ease-in-out;
+        transition: all 300ms ease-in-out; }
+        .workers .profile-wrap .profile-box .profile-overlay p {
+          font-size: 32px; }
+    .workers .profile-wrap .profile-box:hover img {
+      -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+              transform: scale(1.1); }
+    .workers .profile-wrap .profile-box:hover .profile-overlay {
+      top: 0%; }
 
-.stack {
+.partners {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -235,7 +289,68 @@
       -ms-flex-pack: center;
           justify-content: center;
   color: #fff;
-  font-size: 40px; }
+  font-size: 40px;
+  background: -webkit-radial-gradient(at center bottom, #292929, #101010);
+  background: radial-gradient(at center bottom, #292929, #101010);
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .contact .contact-container {
+    max-width: 960px;
+    height: auto; }
+    .contact .contact-container .contact-option {
+      width: 100%;
+      min-height: 70px;
+      font-size: 22px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      margin-bottom: 30px; }
+      .contact .contact-container .contact-option input {
+        background: none;
+        border: none;
+        border-bottom: 1px solid #fff;
+        width: 400px;
+        height: 60px;
+        outline: none;
+        focus: none; }
+      .contact .contact-container .contact-option ::-webkit-input-placeholder {
+        text-transform: uppercase;
+        font-size: 18px; }
+      .contact .contact-container .contact-option #message {
+        background: none;
+        border: none;
+        border-bottom: 1px solid #fff;
+        width: 400px;
+        height: 60px;
+        outline: none;
+        color: #fff;
+        focus: none;
+        resize: none;
+        -webkit-transition: all 300ms ease-in-out;
+        transition: all 300ms ease-in-out; }
+        .contact .contact-container .contact-option #message:focus {
+          height: 200px; }
+    .contact .contact-container .send {
+      margin-top: 30px;
+      border: none;
+      padding: 0;
+      background: none;
+      outline: none;
+      focus: none; }
 
 .menu {
   position: fixed;

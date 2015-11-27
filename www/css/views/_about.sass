@@ -9,26 +9,74 @@
         size: cover
         position: center center
         attachment: fixed
-    display: flex
-    justify-content: center
     flex-direction: column
     
 .workers
+    position: relative
+    color: #fff
     display: flex
     align-items: center
     justify-content: center
-    color: #fff
-    font-size: 40px
     background: 
         image: url('../img/introbg.jpg')
         size: cover
         position: center center
         attachment: fixed
-    display: flex
-    justify-content: center
-    flex-direction: column
+        
+    .workers-title
+        position: absolute
+        top: 30px
+        left: 200px
+        width: auto
+        height: auto
+        font-size: 150px
+        opacity: 0.6
+        
+    .profile-wrap
+        max-width: 960px
+        height: auto
+        display: flex
+        justify-content: space-between
+        
+        .profile-box
+            position: relative
+            width: 400px
+            height: 300px
+            border: 1px solid #fff
+            margin-right: 30px
+            overflow: hidden
+            img
+                width: 100%
+                height: 100%
+                transform: scale(1)
+                transition: all 500ms ease-in-out
+                
+            .profile-overlay
+                position: absolute
+                top: 100%
+                left: 0
+                width: 100%
+                height: 100%
+                color: #fff
+                display: flex
+                justify-content: center
+                align-items: center
+                flex-direction: column
+                background: rgba(0,0,0,0.8)
+                transition: all 300ms ease-in-out
+                
+                p
+                    font-size: 32px
+                    
+                
     
-.stack
+        .profile-box:hover
+            img
+                transform: scale(1.1)
+            .profile-overlay
+                top: 0%
+                
+.partners
     display: flex
     align-items: center
     justify-content: center
