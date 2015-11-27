@@ -1,43 +1,3 @@
-var app = angular.module('app', ['ngRoute']);
-app.config(function($locationProvider, $routeProvider) {
-	$routeProvider.when('/', {
-		templateUrl: 'www/views/home.html',
-		controller: 'homeCtrl'
-	})
-    .when('/projects',{
-        templateUrl: "www/views/projects.html",
-        controller: "projectsCtrl"
-    })
-    .when('/about',{
-        templateUrl: "www/views/about.html",
-        controller: "aboutCtrl"
-    })
-    .when('/contact',{
-        templateUrl: "www/views/contact.html",
-        controller: "contactCtrl"
-    }).otherwise({ redirectTo: '/' });
-});
-
-app.controller('aboutCtrl', ["$scope", function($scope){
-    
-    
-      
-
-
-    
-}]);
-app.controller('contactCtrl', ["$scope", function($scope){
-    
-    
-    
-    
-}]);
-app.controller('homeCtrl', ["$scope", function($scope){
-    
-    
-    
-    
-}]);
 app.controller('projectsCtrl', ["$scope", "$http", function($scope, $http){
     
    
@@ -85,12 +45,3 @@ app.controller('projectsCtrl', ["$scope", "$http", function($scope, $http){
     console.log($scope.projects);
     
 }]);
-app.directive('menubar', function() {
-  return {
-    restrict: 'E',
-    controller: ['$scope', function($scope){
-        
-    }],
-    templateUrl: 'www/views/partial/menubar.html'
-  };
-});

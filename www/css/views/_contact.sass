@@ -1,0 +1,59 @@
+.contact
+    display: flex
+    align-items: center
+    justify-content: center
+    color: #fff
+    font-size: 40px
+    background: radial-gradient(at center bottom, #292929, #101010);
+    display: flex
+    justify-content: center
+    flex-direction: column
+    
+    
+    .contact-container
+        max-width: 960px
+        height: auto
+        
+        .contact-option
+            width: 100%
+            min-height: 70px
+            font-size: 22px
+            display: flex
+            flex-direction: column
+            margin-bottom: 30px
+            
+            input
+                background: none
+                border: none
+                border-bottom: 1px solid #fff
+                width: 400px
+                height: 60px
+                outline: none
+                focus: none
+            ::-webkit-input-placeholder
+                text-transform: uppercase
+                font-size: 18px
+            
+            #message
+                background: none
+                border: none
+                border-bottom: 1px solid #fff
+                width: 400px
+                height: 60px
+                outline: none
+                color: #fff
+                focus: none
+                resize: none
+                transition: all 300ms ease-in-out
+                &:focus
+                    height: 200px
+                
+        .send
+            margin-top: 30px
+            border: none
+            padding: 0
+            background: none
+            outline: none
+            focus: none
+            
+            

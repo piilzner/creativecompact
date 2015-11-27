@@ -1,0 +1,22 @@
+<menubar></menubar>
+<section class="projects">
+    
+    
+  <div ng-repeat="project in projects" class="project-container">
+      <div class="project-img">
+          <img src="{{ project.image }}" alt="">
+      </div>
+      <div class="overlay">
+          <h4>{{ project.title }}</h4>
+          <p>{{ project.desc }}</p>
+          <div class="read-more">
+          <i>
+              <img src="www/img/icons/arrow.png" alt="">
+          </i>
+      </div>
+      </div>
+      
+  </div>
+    
+    
+</section>
