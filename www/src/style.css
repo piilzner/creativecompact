@@ -238,6 +238,8 @@
         transition: all 300ms ease-in-out; }
         .workers .profile-wrap .profile-box .profile-overlay p {
           font-size: 32px; }
+        .workers .profile-wrap .profile-box .profile-overlay i {
+          margin-right: 10px; }
     .workers .profile-wrap .profile-box:hover img {
       -webkit-transform: scale(1.1);
           -ms-transform: scale(1.1);
