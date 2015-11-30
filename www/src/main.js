@@ -4,6 +4,10 @@ app.config(function($locationProvider, $routeProvider) {
 		templateUrl: 'www/views/home.html',
 		controller: 'homeCtrl'
 	})
+    .when('/articles',{
+        templateUrl: "www/views/articles.html",
+        controller: "articlesCtrl"
+    })
     .when('/projects',{
         templateUrl: "www/views/projects.html",
         controller: "projectsCtrl"
@@ -18,11 +22,32 @@ app.config(function($locationProvider, $routeProvider) {
     }).otherwise({ redirectTo: '/' });
 });
 
+app.directive('menubar', function() {
+  return {
+    restrict: 'E',
+    controller: ['$scope', function($scope){
+        
+    }],
+    templateUrl: 'www/views/partial/menubar.html'
+  };
+});
 app.controller('aboutCtrl', ["$scope", function($scope){
     
     
       
 
+
+    
+}]);
+app.controller('articlesCtrl', ["$scope", function($scope){
+    
+    
+      
+$('.box-wrapper').masonry({
+  // options
+  itemSelector: '.box'
+});
+    
 
     
 }]);
@@ -85,12 +110,3 @@ app.controller('projectsCtrl', ["$scope", "$http", function($scope, $http){
     console.log($scope.projects);
     
 }]);
-app.directive('menubar', function() {
-  return {
-    restrict: 'E',
-    controller: ['$scope', function($scope){
-        
-    }],
-    templateUrl: 'www/views/partial/menubar.html'
-  };
-});
