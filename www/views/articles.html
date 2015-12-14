@@ -2,15 +2,16 @@
 
 
 <section class="articles">
+   
     
     <div class="box-wrapper">
-        <div class="box">Lorem ipsum dolorvoluptate suscipit doloremque quos, qui temporibus quibusdam quisquam perferendis rerum! Amet vitae iste numquam blanditiis labori debitis voluptandis rerum! Amet vitae iste numquam blanditiis labori debitis voluptate sus sit amet, consectetur adipisicing elit. Aperiam, mo!</div>
-        <div class="box">Errolitia, vero,voluptate suscipit doloremque quos, qui temporibus quibusdam quisquam perferendis rerum! Amet vitae iste numquam blanditiis labori debitis voluptate suscipit doloremque quos, qui temporibus quibusdam quisquam perferendis rerum! Amet vitae iste numquam blanditiis labori debitis voluptate sus officia? Eius voluptas odio natus exercitationem corrupti.</div>
-        <div class="box">Sequi debitis voluptate suscipit doloremque quos, qui temporibus quibusdam quisquam perferendis rerum! Amet vitae iste numquam blanditiis labori debitis voluptate suscipit doloremque quos, qui temporibus quibusdam quisquam perferendis rerum! Amet vitae iste numquam blanditiis laboriosam, accusamus corporis.</div>
-        <div class="box">Sequi debitis voluptate suscipit doloremque quos, qui temporibus quibusdam quisquam perferendis rerum! Amet vitae iste numquam blanditiis labori debitis voluptate suscipit doloremque quos, qui temporibus quibusdam quisquam perferendis rerum! Amet vitae iste numquam blanditiis labori debitis voluptate suscipit doloremque quos, qui temporibus quibusdam quisquam perferendis rerum! Amet vitae iste numquam blanditiis laboriosam, accusamus corporis.</div>
-        <div class="box">Sequi debitis voluptate suscipit doloremque quos, qui temporibus quibusdam quisquam perferendis rerum! Amet vitae iste numquam blanditiis labori debitis voluptate suscipit doloremque quos, qui temporibus quibusdam quisquam perferendis rerum! Amet vitae iste numquam blanditiis labori debitis voluptate suscipit doloremque quos, qui temporibus quibusdam quisquam perferendis rerum! Amet vitae iste numquam blanditiis laboriosam, accusamus corporis.</div>
-        <div class="box">Sequi debitis voluptate suscipit doloremque quos, qui temporibus quibusdam quisquam perferendis rerum! Amet vitae iste numquam blanditiis labori debituam perferendis rerum! Amet vitae iste numquam blanditiis laboriosam, accusamus corporis.</div>
-        
+        <div class="box" ng-repeat=" article in articles  | orderBy:'-' ">
+            <img src="{{ article.image }}" alt="">
+             <h4>{{ article.title }}</h4>
+             <p>{{ article.desc }}</p>
+             <a target="_blank" href="{{ article.link }}">link to project</a>
         </div>
+        
+    </div>
     
 </section>
