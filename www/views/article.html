@@ -6,8 +6,14 @@
     <div class="article-title">
         
         <img src="{{ articles.image }}" alt="">
-        <h2>{{ articles.title }}</h2>
-        <p>{{ articles.desc }}</p>
+        
+        <div class="article-info-container">
+            <h2>{{ articles.title }}</h2>
+            <p style="margin: 30px 0">{{ articles.desc }}</p>
+            
+            <p><b>Webbsida:</b> <a href="{{ articles.site }}">{{ articles.site }}</a></p>
+            <p><b>Författare:</b> {{ articles.author }}</p>
+        </div>
     </div>
     
     <a ng-href="#/articles">

@@ -14,7 +14,7 @@ app.controller('aboutCtrl', ["$scope", function($scope){
           name : "Nils Löfgren",
           title : "Designer",
           image : "www/img/avatar/nils.jpg",
-          desc : "CSS guru av dess like. En perfektionist vars ögon blöder om inte lite animationer eller rätt färgkombinationer finns med.",
+          desc : "CSS guru. En perfektionist vars ögon blöder om inte lite animationer eller rätt färgkombinationer finns med.",
           email : "nils@creativecompact.se"
           
       },
