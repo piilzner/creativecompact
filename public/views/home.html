@@ -1,0 +1,66 @@
+<menubar></menubar>
+<div id="intro">
+    <div class="intro-logo">
+        <img src="img/logo.png" alt="">
+    </div>
+    <div class="intro-title">
+      En modern och nytänkande webbyrå
+    </div>
+
+    <div class="scroll-down">
+        <a href="#simple-about"><i class="fa fa-chevron-down"></i></a>
+    </div>
+</div>
+
+
+<section id="simple-about">
+    <div class="title">Vad vi gör!</div>
+    
+    <div class="comp-desc">
+      <p>  
+Creative Compact är en modern digital webbyrå stationerad i Karlshamn, Sverige. Vi specialiserar oss på innovativa, kreativa lösningar och är inte rädda för att testa nya saker. Vår passion är att från en idé kunna skapa något vackert och funktionellt, digitalt. Vi har även en stor passion för kaffedrickande. Projekten sträcker sig från omfattande webbsidor till mobil appar. Vi är inte rädda för att utmana oss själva kreativt och tänja på gränserna för vad som är möjligt , alltid sätta våra mål högt och nå utöver det vanliga. Vårt största focus är såklar dig som kund. Vi erbjuder skräddarsydda lösningar i varje projekt för att just du ska få det du vill och kunna öka din business.
+   </p>
+   
+    <a class="cta-btn" ng-href="#/about">
+        <span>Mer om oss</span>
+    </a>
+    
+    </div>
+    
+   
+    
+    
+    <div class="recent-projects">
+       
+       <p class="proj-title">några av våra senaste projekt</p>
+       
+        <div ng-repeat="project in projects | limitTo: 3" class="project-home">
+            <div class="project-img">
+                <img src="{{ project.thumb }}" alt="">
+            </div>
+            <a ng-href="#/projects/project/{{$index}}">
+                <div class="comp-box">
+                    <div class="comp-title">{{ project.company }}</div>
+                    <span>{{ project.genre }}</span>
+                </div>
+            </a>
+<!--
+            <div class="overlay">
+                <h4>{{ project.title }}</h4>
+                <p>{{ project.desc }}</p>
+                <div class="read-more">
+                    <i>
+                        <img src="www/img/icons/arrow.png" alt="">
+                    </i>
+                </div>
+            </div>
+-->
+        </div>
+        
+        <a class="cta-btn" ng-href="#/projects">
+            <span>Visa alla</span>
+        </a>
+        
+    </div>
+</section>
+<footer></footer>
