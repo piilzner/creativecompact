@@ -1,50 +1,89 @@
 <menubar></menubar>
 <section class="about">
+   
+    <div class="about-intro">
     
-    om oss
-    
-</section>
-<section class="workers">
-    
-    <div class="workers-title">
-        team
-    </div>
-    
-    <div class="profile-wrap">
-        <div class="profile-box">
+        <h4>Creative Compact</h4>
         
-            <img src="https://scontent-ams2-1.xx.fbcdn.net/hphotos-xpl1/v/t1.0-9/1916726_1390413882296_2038716_n.jpg?oh=2920ffee15fc953ec0facb141b52a91b&oe=56AD1A21" alt="">
-            
-            <div class="profile-overlay"> 
-                <p>Filip</p> 
-                <span>#Console ninja</span>
+        <p>Vi specialiserar oss på innovativa, kreativa lösningar och är inte rädda för att testa nya saker. Vår passion är att från en ide kunna skapa något vackert och funktionellt, digitalt.</p>
+        
+    </div>
+    
+    <div class="about-workers">
+       
+       <h3>Team</h3>
+       
+        <div class="row" ng-repeat=" worker in workers">
+            <div class="col-xs-12 col-md-6 workers-box">
+                <div class="worker-image">
+                    <img src="{{ worker.image }}" alt="">
+                </div>
             </div>
-            
-        </div>
-        <div class="profile-box">
-            <img src="https://scontent-ams2-1.xx.fbcdn.net/hphotos-xtp1/v/t34.0-12/12285695_10153124512281916_636249271_n.jpg?oh=1c8d451dedf81b31ddc04e054abae706&oe=565B8B4B" alt="">
-            
-            <div class="profile-overlay">  
-                <p>Oskar</p> 
-                <span>#Management expert</span>
+            <div class="col-xs-12 col-md-6 workers-info">
+                <div class="workers-name">
+                    <span>{{ worker.name }}</span>
+                    <p>{{ worker.title }}</p>
+                </div>
+                <div class="workers-desc">
+                    <span>{{ worker.desc }}</span>
+                </div>    
+                <div class="workers-email">
+                    <a href="mailto:{{ worker.email }}">
+                    <i class="fa fa-envelope"></i><span>{{ worker.email }}</span></a>
+                </div>
             </div>
-            
-        </div>
-        <div class="profile-box">
-            <img src="https://scontent-ams2-1.xx.fbcdn.net/hphotos-xal1/t31.0-8/12039161_10153051432396916_857836829138815710_o.jpg" alt="">
-            
-            <div class="profile-overlay"> 
-                 <p>Nils</p> 
-                 <span>#Css guru</span>
-                 <span><i class="fa fa-envelope-o"></i>nils@creativecompact.se</span>
-             </div>
             
         </div>
     </div>
     
+    <div class="about-tools">
+        
+        <h3>Verktyg</h3>
+        
+        <div class="tools-desc-container">
+            <i class="fa fa-heart-o"></i>
+            <div class="tools-desc">
+                Vi på Creative Compact är inte rädda för att testa nya teknilogier. Vi anpassar oss efter projektet men vi har förstås några favoriter när det gäller kod språk.
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-4">
+                    <div class="thumbnail">
+                        <img src="www/img/angular.png" alt="...">
+                        <div class="caption">
+                            <h3>AngularJS</h3>
+                            <p>Angular.JS är ett frontend ramverk för javascript. Med Angular kan du säga hej då till tråkiga statiska html-sidor och välkomna det dynamiska på webben.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-12 col-md-4">
+                    <div class="thumbnail">
+                        <img src="www/img/ionic.png" alt="...">
+                        <div class="caption">
+                            <h3>Ionic</h3>
+                            <p>Ionic är ett ramverk för att bygga mobila applikationer. Vi på Creative Compact älskar detta då det underlättar både i tid och ansträgning för att så snabbt som möjligt kunna leverera ut produkten till kund.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-12 col-md-4">
+                    <div class="thumbnail">
+                        <img src="www/img/sass.png" alt="...">
+                        <div class="caption">
+                            <h3>Sass</h3>
+                            <p>Sass står för "Syntactically Awesome Style Sheets" och är precis som det låter, Awesome!</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
 </section>
-<section class="partners">
-    
-    partners
-    
-</section>
+<footer></footer>
