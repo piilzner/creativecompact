@@ -33,152 +33,6 @@ app.config(function($locationProvider, $routeProvider) {
     }).otherwise({ redirectTo: '/404' });
 });
 
-app.controller('aboutCtrl', ["$scope", function($scope){
-    $('body').scrollTop(0,0);
-    
-      $scope.workers = [
-      {
-          name : "Filip Ramstedt",
-          title : "Developer",
-          image : "www/img/avatar/filip.jpg",
-          desc : "Console ninja. Kan allt som har med kod att göra och älskar javascript mer än någonting annat på denna jord",
-          email : "filip@creativecompact.se"
-          
-      },
-      {
-          name : "Nils Löfgren",
-          title : "Designer",
-          image : "www/img/avatar/nils.jpg",
-          desc : "CSS guru av dess like. En perfektionist vars ögon blöder om inte lite animationer eller rätt färgkombinationer finns med.",
-          email : "nils@creativecompact.se"
-          
-      },
-      {
-          name : "Oskar Stålstierna",
-          title : "Project manager",
-          image : "www/img/avatar/oskar.jpg",
-          desc : "Extrem chailatte drickare som kan dö för retro manbags och stockholm stad. Organiserad och punktlig tack vare google calender",
-          email : "oskar@creativecompact.se"
-          
-      }
-          
-  ];
-
-
-    
-}]);
-app.controller('articleCtrl', ["$scope", "$routeParams", "articles", function($scope, $routeParams, articles){
-    
-     $('body').scrollTop(0,0);
-    
-    var currentId = $routeParams.id;
-     
-   $scope.articles = articles.getArticle(currentId);
-    
-    
-    console.log($scope.articles);
-    
-    
-    
-    
-    
-}]);
-app.controller('articlesCtrl', ["$scope", "$http", "articles", function($scope, $http, articles){
-    
-    
-      
-    
-  $scope.articles = articles.getArticles();
-    
-   $('body').scrollTop(0,0);
-    
-$('.box-wrapper').masonry({
-  // options
-  itemSelector: '.box'
-});
-    
-    
-    
-    $scope.setFilter = function(filter){
-        
-        $scope.filters = filter;
-        
-    }
-
-    
-    
-}]);
-app.controller('contactCtrl', ["$scope", function($scope){
-    
-    $('body').scrollTop(0,0);
-    
-    
-}]);
-app.controller('homeCtrl', ["$scope", "projects", function($scope, projects){
-    
-    $('body').scrollTop(0,0);
-    
-     $scope.projects = projects.getProjects();
-    
-    console.log($scope.projects);
-    
-    
-    $('a[href^="#"]').on('click',function (e) {
-	    e.preventDefault();
-
-	    var target = this.hash;
-	    var $target = $(target);
-
-	    $('html, body').stop().animate({
-	        'scrollTop': $target.offset().top
-	    }, 900, 'swing', function () {
-	        window.location.hash = target;
-	    });
-	});
-    
-    
-    
-}]);
-app.controller('projectCtrl', ["$scope", "$routeParams", "projects", function($scope, $routeParams, projects){
-    $('body').scrollTop(0,0);
-    
-    var currentId = $routeParams.id;
-     
-   $scope.projects = projects.getProject(currentId);
-    
-    
-    $(window).scroll(function(){
-       
-         
-        
-        if ($(window).scrollTop() >= $('.project-img').height) {
-         
-            $('.proj-content').css({
-                'position' : 'fixed'
-            })
-            
-        }else{
-            $('.proj-content').css({
-                'position' : 'relative'
-            });
-        }
-        
-        console.log($('.proj-container').height);
-    });
-    
-    
-    
-    
-}]);
-app.controller('projectsCtrl', ["$scope", "$http", "projects", function($scope, $http, projects){
-    
-    $('body').scrollTop(0,0);
-   
-    $scope.projects = projects.getProjects();
-    
-    console.log($scope.projects);
-    
-}]);
 app.directive('footer', function() {
   return {
     restrict: 'E',
@@ -339,3 +193,149 @@ app.factory('projects', function() {
         }
     };
 });
+app.controller('aboutCtrl', ["$scope", function($scope){
+    $('body').scrollTop(0,0);
+    
+      $scope.workers = [
+      {
+          name : "Filip Ramstedt",
+          title : "Developer",
+          image : "www/img/avatar/filip.jpg",
+          desc : "Console ninja. Kan allt som har med kod att göra och älskar javascript mer än någonting annat på denna jord",
+          email : "filip@creativecompact.se"
+          
+      },
+      {
+          name : "Nils Löfgren",
+          title : "Designer",
+          image : "www/img/avatar/nils.jpg",
+          desc : "CSS guru av dess like. En perfektionist vars ögon blöder om inte lite animationer eller rätt färgkombinationer finns med.",
+          email : "nils@creativecompact.se"
+          
+      },
+      {
+          name : "Oskar Stålstierna",
+          title : "Project manager",
+          image : "www/img/avatar/oskar.jpg",
+          desc : "Extrem chailatte drickare som kan dö för retro manbags och stockholm stad. Organiserad och punktlig tack vare google calender",
+          email : "oskar@creativecompact.se"
+          
+      }
+          
+  ];
+
+
+    
+}]);
+app.controller('articleCtrl', ["$scope", "$routeParams", "articles", function($scope, $routeParams, articles){
+    
+     $('body').scrollTop(0,0);
+    
+    var currentId = $routeParams.id;
+     
+   $scope.articles = articles.getArticle(currentId);
+    
+    
+    console.log($scope.articles);
+    
+    
+    
+    
+    
+}]);
+app.controller('articlesCtrl', ["$scope", "$http", "articles", function($scope, $http, articles){
+    
+    
+      
+    
+  $scope.articles = articles.getArticles();
+    
+   $('body').scrollTop(0,0);
+    
+$('.box-wrapper').masonry({
+  // options
+  itemSelector: '.box'
+});
+    
+    
+    
+    $scope.setFilter = function(filter){
+        
+        $scope.filters = filter;
+        
+    }
+
+    
+    
+}]);
+app.controller('contactCtrl', ["$scope", function($scope){
+    
+    $('body').scrollTop(0,0);
+    
+    
+}]);
+app.controller('homeCtrl', ["$scope", "projects", function($scope, projects){
+    
+    $('body').scrollTop(0,0);
+    
+     $scope.projects = projects.getProjects();
+    
+    console.log($scope.projects);
+    
+    
+    $('a[href^="#"]').on('click',function (e) {
+	    e.preventDefault();
+
+	    var target = this.hash;
+	    var $target = $(target);
+
+	    $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	    }, 900, 'swing', function () {
+	        window.location.hash = target;
+	    });
+	});
+    
+    
+    
+}]);
+app.controller('projectCtrl', ["$scope", "$routeParams", "projects", function($scope, $routeParams, projects){
+    $('body').scrollTop(0,0);
+    
+    var currentId = $routeParams.id;
+     
+   $scope.projects = projects.getProject(currentId);
+    
+    
+    $(window).scroll(function(){
+       
+         
+        
+        if ($(window).scrollTop() >= $('.project-img').height) {
+         
+            $('.proj-content').css({
+                'position' : 'fixed'
+            })
+            
+        }else{
+            $('.proj-content').css({
+                'position' : 'relative'
+            });
+        }
+        
+        console.log($('.proj-container').height);
+    });
+    
+    
+    
+    
+}]);
+app.controller('projectsCtrl', ["$scope", "$http", "projects", function($scope, $http, projects){
+    
+    $('body').scrollTop(0,0);
+   
+    $scope.projects = projects.getProjects();
+    
+    console.log($scope.projects);
+    
+}]);
