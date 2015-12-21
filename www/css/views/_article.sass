@@ -1,0 +1,35 @@
+.article
+    min-height: 100vh
+    +flex(center)
+    flex-direction: column
+    background: #fff
+    margin-bottom: 175px
+    
+    .article-title
+        width: 80%
+        +flex(center)
+        flex-direction: column
+        img
+            width: 70%
+            height: 500px
+            margin: 0 15%
+    
+    a
+        text-decoration: none
+            
+        .proj-back-btn
+            margin-top: 100px
+            padding: 20px 50px
+            color: $blue
+            border: 1px solid $blue
+            border-radius: 20px
+            font:
+                family: 'roboto'
+                size: 18px
+                weight: 100
+            transition: all .3s ease-in-out
+            i
+                margin-right: 10px
+            &:hover
+                background: $blue
+                color: #fff
