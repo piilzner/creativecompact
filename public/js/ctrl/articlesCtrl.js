@@ -1,25 +1,15 @@
 app.controller('articlesCtrl', ["$scope", "$http", "articles", function($scope, $http, articles){
-    
-    
-      
+  $('body').scrollTop(0,0);
     
   $scope.articles = articles.getArticles();
-    
-   $('body').scrollTop(0,0);
-    
-$('.box-wrapper').masonry({
-  // options
-  itemSelector: '.box'
-});
-    
-    
-    
-    $scope.setFilter = function(filter){
-        
-        $scope.filters = filter;
-        
-    }
-
-    
-    
+  $scope.filters = "";  
+  
+  $('.box-wrapper').masonry({
+    itemSelector: '.box'
+  });
+     
+  $scope.setFilter = function(filter){
+      $scope.filters = filter;  
+  }
+  
 }]);

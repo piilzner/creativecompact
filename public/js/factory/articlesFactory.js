@@ -1,6 +1,5 @@
 app.factory('articles', function() {
 	
-    
     var articles = [
       {
           title : "Piilzners boilerplate",
@@ -19,19 +18,16 @@ app.factory('articles', function() {
           date : "12-12-2015",
           genre : [
               "design"
-          ]
-          
+          ]  
       }
-      
   ];
-    
-    
-    return {
-        getArticles: function() {
-			return articles;
-        },
-        getArticle: function(index){
-            return articles[index];
-        }
-    };
+   
+  return {
+    getArticles: function() {
+      return articles;
+    },
+    getArticle: function(index){
+      return articles[index];
+    }
+  };
 });

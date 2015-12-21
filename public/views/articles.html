@@ -8,11 +8,11 @@
     
     <div class="genre-wrapper">
         
-        <div ng-click="setFilter('')" class="genre-btn active">alla</div>
-        <div ng-click="setFilter('webb')" class="genre-btn">webb</div>
-        <div ng-click="setFilter('kod')" class="genre-btn">kod</div>
-        <div ng-click="setFilter('mobil')" class="genre-btn">mobil</div>
-        <div ng-click="setFilter('design')" class="genre-btn">design</div>
+        <div ng-click="setFilter('')" class="genre-btn" ng-class="(filters == '')? 'active' : ''">alla</div>
+        <div ng-click="setFilter('webb')" class="genre-btn" ng-class="(filters == 'webb')? 'active' : ''">webb</div>
+        <div ng-click="setFilter('kod')" class="genre-btn" ng-class="(filters == 'kod')? 'active' : ''">kod</div>
+        <div ng-click="setFilter('mobil')" class="genre-btn" ng-class="(filters == 'mobil')? 'active' : ''">mobil</div>
+        <div ng-click="setFilter('design')" class="genre-btn" ng-class="(filters == 'design')? 'active' : ''">design</div>
         
     </div>
     

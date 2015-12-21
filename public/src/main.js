@@ -67,64 +67,45 @@ app.controller('aboutCtrl', ["$scope", function($scope){
     
 }]);
 app.controller('articleCtrl', ["$scope", "$routeParams", "articles", function($scope, $routeParams, articles){
-    
-     $('body').scrollTop(0,0);
-    
-    var currentId = $routeParams.id;
-     
-   $scope.articles = articles.getArticle(currentId);
-    
-    
-    console.log($scope.articles);
-    
-    
-    
-    
-    
+    $('body').scrollTop(0,0);
+    $scope.articles = articles.getArticle($routeParams.id);
 }]);
 app.controller('articlesCtrl', ["$scope", "$http", "articles", function($scope, $http, articles){
-    
-    
-      
+  $('body').scrollTop(0,0);
     
   $scope.articles = articles.getArticles();
-    
-   $('body').scrollTop(0,0);
-    
-$('.box-wrapper').masonry({
-  // options
-  itemSelector: '.box'
-});
-    
-    
-    
-    $scope.setFilter = function(filter){
-        
-        $scope.filters = filter;
-        
-    }
-
-    
-    
+  $scope.filters = "";  
+  
+  $('.box-wrapper').masonry({
+    itemSelector: '.box'
+  });
+     
+  $scope.setFilter = function(filter){
+      $scope.filters = filter;  
+  }
+  
 }]);
 app.controller('contactCtrl', ["$scope", "$http", function($scope, $http){
-    
     $('body').scrollTop(0,0);
     
-    
     $scope.sendMessage = function() {
-        
-        console.log($scope.name, $scope.email,$scope.message);
         
         $http.post("/message", {
             email: $scope.email,
             name: $scope.name,
             message: $scope.message
-        }).then(function(){
-            console.log("succsess");
+        }).then(function(data){
+            console.log(data.data);
+            if(data.data.error == "novalid"){
+                $scope.errormsg = data.data.message;
+            }else{
+                /* Show succses modal here!*/
+                console.log("succsess");    
+            }
         },function() {
-            console.log("error");
+            $scope.errormsg = "Ett fel uppstog försök igen!";
         });
+        
     }
     
 }]);
@@ -132,76 +113,45 @@ app.controller('homeCtrl', ["$scope", "projects", function($scope, projects){
     
     $('body').scrollTop(0,0);
     
-     $scope.projects = projects.getProjects();
-    
-    console.log($scope.projects);
-    
+    $scope.projects = projects.getProjects();
     
     $('a[href^="#"]').on('click',function (e) {
-	    e.preventDefault();
-
-	    var target = this.hash;
-	    var $target = $(target);
-
-	    $('html, body').stop().animate({
-	        'scrollTop': $target.offset().top
-	    }, 900, 'swing', function () {
-	        window.location.hash = target;
-	    });
-	});
+        e.preventDefault();
     
+        var target = this.hash;
+        var $target = $(target);
     
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top
+        }, 900, 'swing', function () {
+            window.location.hash = target;
+        });
+    }); 
     
 }]);
 app.controller('projectCtrl', ["$scope", "$routeParams", "projects", function($scope, $routeParams, projects){
     $('body').scrollTop(0,0);
-    
-    var currentId = $routeParams.id;
-     
-   $scope.projects = projects.getProject(currentId);
-    
+       
+    $scope.projects = projects.getProject($routeParams.id);
     
     $(window).scroll(function(){
-       
-         
-        
         if ($(window).scrollTop() >= $('.project-img').height) {
-         
-            $('.proj-content').css({
-                'position' : 'fixed'
-            })
-            
+            $('.proj-content').css({'position' : 'fixed'});
         }else{
-            $('.proj-content').css({
-                'position' : 'relative'
-            });
+            $('.proj-content').css({'position' : 'relative'});
         }
-        
-        console.log($('.proj-container').height);
     });
-    
-    
-    
-    
+  
 }]);
 app.controller('projectsCtrl', ["$scope", "$http", "projects", function($scope, $http, projects){
-    
     $('body').scrollTop(0,0);
-   
     $scope.projects = projects.getProjects();
-    
-    console.log($scope.projects);
-    
 }]);
 app.directive('footer', function() {
   return {
     restrict: 'E',
     templateUrl: 'views/partial/footer.html'
-  };
-    
-
-    
-    
+  };   
 });
 app.directive('menubar', function() {
   return {
@@ -222,21 +172,13 @@ app.directive('menubar', function() {
                 $('.ham-three').css({'background' : '#2b2b2b', 'transform' : 'rotate(45deg)', 'margin-top' : '-27px', 'width' : '70%'});
                 
             }
-        });
-        
-           
-        
+        });    
     }],
     templateUrl: 'views/partial/menubar.html'
-  };
-    
-
-    
-    
+  };    
 });
 app.factory('articles', function() {
 	
-    
     var articles = [
       {
           title : "Piilzners boilerplate",
@@ -255,28 +197,22 @@ app.factory('articles', function() {
           date : "12-12-2015",
           genre : [
               "design"
-          ]
-          
+          ]  
       }
-      
   ];
-    
-    
-    return {
-        getArticles: function() {
-			return articles;
-        },
-        getArticle: function(index){
-            return articles[index];
-        }
-    };
+   
+  return {
+    getArticles: function() {
+      return articles;
+    },
+    getArticle: function(index){
+      return articles[index];
+    }
+  };
 });
 app.factory('projects', function() {
-	
     
-       
   var projects = [
-      
       //happnings
       {
           company: "happnings",
@@ -295,7 +231,6 @@ app.factory('projects', function() {
               "https://mir-s3-cdn-cf.behance.net/project_modules/hd/19551931720889.565dff2ae3e6f.jpg"
           ]
       },
-      
       //dotlist
       {
           company: "DotList",
@@ -313,7 +248,6 @@ app.factory('projects', function() {
               "img/project/dotlist/projImage.jpg"
           ]
       },
-      
       //Bjorkeberg
       {
           company: "Björkebergs hembygdsförening",
@@ -331,19 +265,15 @@ app.factory('projects', function() {
               "img/project/happnings/cover.jpg",
               "img/project/bjorkeberg/cover.jpg"
           ]
-      }
-       
-      
+      }  
   ];
-    
-    
-    
-    return {
-        getProjects: function() {
-			return projects;
-        },
-        getProject: function(index){
-            return projects[index];
-        }
-    };
+      
+  return {
+    getProjects: function() {
+      return projects;
+    },
+    getProject: function(index){
+      return projects[index];
+    }
+  };
 });

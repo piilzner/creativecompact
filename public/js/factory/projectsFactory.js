@@ -1,9 +1,6 @@
 app.factory('projects', function() {
-	
     
-       
   var projects = [
-      
       //happnings
       {
           company: "happnings",
@@ -22,7 +19,6 @@ app.factory('projects', function() {
               "https://mir-s3-cdn-cf.behance.net/project_modules/hd/19551931720889.565dff2ae3e6f.jpg"
           ]
       },
-      
       //dotlist
       {
           company: "DotList",
@@ -40,7 +36,6 @@ app.factory('projects', function() {
               "img/project/dotlist/projImage.jpg"
           ]
       },
-      
       //Bjorkeberg
       {
           company: "Björkebergs hembygdsförening",
@@ -58,19 +53,15 @@ app.factory('projects', function() {
               "img/project/happnings/cover.jpg",
               "img/project/bjorkeberg/cover.jpg"
           ]
-      }
-       
-      
+      }  
   ];
-    
-    
-    
-    return {
-        getProjects: function() {
-			return projects;
-        },
-        getProject: function(index){
-            return projects[index];
-        }
-    };
+      
+  return {
+    getProjects: function() {
+      return projects;
+    },
+    getProject: function(index){
+      return projects[index];
+    }
+  };
 });

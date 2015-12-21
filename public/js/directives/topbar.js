@@ -17,15 +17,8 @@ app.directive('menubar', function() {
                 $('.ham-three').css({'background' : '#2b2b2b', 'transform' : 'rotate(45deg)', 'margin-top' : '-27px', 'width' : '70%'});
                 
             }
-        });
-        
-           
-        
+        });    
     }],
     templateUrl: 'views/partial/menubar.html'
-  };
-    
-
-    
-    
+  };    
 });
