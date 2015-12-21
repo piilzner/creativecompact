@@ -18,8 +18,7 @@ app.factory('projects', function() {
           date : "15/11-2015",
           site : "http://happnings.se/",
           images : [
-              "www/img/project/dotlist/projImage.jpg",
-              "https://mir-s3-cdn-cf.behance.net/project_modules/hd/19551931720889.565dff2ae3e6f.jpg"
+              "www/img/project/happnings/projImage.jpg"
           ]
       },
       
@@ -30,12 +29,12 @@ app.factory('projects', function() {
           title : "DotList",
           thumb : "www/img/project/dotlist/thumb.png",
           desc : 
-            "happnings är en applikation som listar alla event i din stad på en central plats. Ett enkelt sätt att se vad som händer omkring dig. Användaren kan söka på stad, kategori, datum, titel, mm för att snabbt hitta ett event. Du kan även gilla för att få en notifiering dagen innan för att inte glömma bort vad du vill gå på. Idén är att göra det lättare för användarna att hitta event samt för arrangörerna att nå ut till en bredare publik än tidigare.  ",
+            "DotList är en mobilapplikation där användaren kan skapa inköpslistor eller att-göra-listor. Enkelt lägga till och uppdatera sina listor och synka dem med vänner eller respektive.  ",
           
           coverImage : "www/img/project/dotlist/cover.jpg",
-          tools : "Photoshop, Angular, Ionic",
-          date : "15/11-2015",
-          site : "http://happnings.se/",
+          tools : "Photoshop, illustrator, Angular, Ionic",
+          date : "15/6-2015",
+          site : "",
           images : [
               "www/img/project/dotlist/projImage.jpg"
           ]
@@ -48,15 +47,14 @@ app.factory('projects', function() {
           title : "Björkeberg.com",
           thumb : "www/img/project/bjorkeberg/thumb.jpg",
           desc : 
-            "happnings är en applikation som listar alla event i din stad på en central plats. Ett enkelt sätt att se vad som händer omkring dig. Användaren kan söka på stad, kategori, datum, titel, mm för att snabbt hitta ett event. Du kan även gilla för att få en notifiering dagen innan för att inte glömma bort vad du vill gå på. Idén är att göra det lättare för användarna att hitta event samt för arrangörerna att nå ut till en bredare publik än tidigare.  ",
+            "Björkebergs hembyggdsförening ville ha en uppfräschning på sin tidigare statiska html-sida. Dem ville att den skulle vara enkel att uppdatera och lägga till nytt innehåll vilket gjorde att vi valde wordpress som verktyg i detta projekt. ",
           
           coverImage : "www/img/project/bjorkeberg/cover.jpg",
-          tools : "Photoshop, Angular, Ionic",
-          date : "15/11-2015",
+          tools : "Photoshop, Wordpress",
+          date : "15/11-2014",
           site : "http://www.bjorkeberg.com",
           images : [
-              "www/img/project/happnings/cover.jpg",
-              "www/img/project/bjorkeberg/cover.jpg"
+              "www/img/project/bjorkeberg/projImage.jpg"
           ]
       }
        

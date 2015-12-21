@@ -33,6 +33,53 @@ app.config(function($locationProvider, $routeProvider) {
     }).otherwise({ redirectTo: '/404' });
 });
 
+app.directive('footer', function() {
+  return {
+    restrict: 'E',
+    controller: ['$scope', function($scope){
+        
+      
+           
+        
+    }],
+    templateUrl: 'www/views/partial/footer.html'
+  };
+    
+
+    
+    
+});
+app.directive('menubar', function() {
+  return {
+    restrict: 'E',
+    controller: ['$scope', function($scope){
+        
+        $('.menu-ham').click(function(){
+            
+            if($('.menu').css('right') == '0px'){
+                $('.menu').css('right', '-500px');
+                $('.ham-one').css({'background' : '#17a19f', 'transform' : 'rotate(0deg)', 'margin-top' : '0', 'width' : '100%'});
+                $('.ham-three').css({'background' : '#17a19f', 'transform' : 'rotate(0deg)', 'margin-top' : '0', 'width' : '100%'});
+                $('.ham-two').css('display', 'block');
+            }else{
+                $('.menu').css('right', '0px');
+                 $('.ham-one').css({'background' : '#2b2b2b', 'transform' : 'rotate(-45deg)', 'margin-top' : '27px', 'width' : '70%'});
+                $('.ham-two').css('display', 'none');
+                $('.ham-three').css({'background' : '#2b2b2b', 'transform' : 'rotate(45deg)', 'margin-top' : '-27px', 'width' : '70%'});
+                
+            }
+        });
+        
+           
+        
+    }],
+    templateUrl: 'www/views/partial/menubar.html'
+  };
+    
+
+    
+    
+});
 app.controller('aboutCtrl', ["$scope", function($scope){
     $('body').scrollTop(0,0);
     
@@ -49,7 +96,7 @@ app.controller('aboutCtrl', ["$scope", function($scope){
           name : "Nils Löfgren",
           title : "Designer",
           image : "www/img/avatar/nils.jpg",
-          desc : "CSS guru av dess like. En perfektionist vars ögon blöder om inte lite animationer eller rätt färgkombinationer finns med.",
+          desc : "CSS guru. En perfektionist vars ögon blöder om inte lite animationer eller rätt färgkombinationer finns med.",
           email : "nils@creativecompact.se"
           
       },
@@ -112,6 +159,21 @@ app.controller('contactCtrl', ["$scope", function($scope){
     
     $('body').scrollTop(0,0);
     
+    
+    
+    $('.send').click(function(){
+       
+    
+        
+        $('.message-sucess').css('right', "0");
+        
+        setTimeout(function(){
+          $('.message-sucess').css('right', '-320px');
+        }, 3000);
+        
+        
+        
+    });
     
 }]);
 app.controller('homeCtrl', ["$scope", "projects", function($scope, projects){
@@ -179,62 +241,17 @@ app.controller('projectsCtrl', ["$scope", "$http", "projects", function($scope, 
     console.log($scope.projects);
     
 }]);
-app.directive('footer', function() {
-  return {
-    restrict: 'E',
-    controller: ['$scope', function($scope){
-        
-      
-           
-        
-    }],
-    templateUrl: 'www/views/partial/footer.html'
-  };
-    
-
-    
-    
-});
-app.directive('menubar', function() {
-  return {
-    restrict: 'E',
-    controller: ['$scope', function($scope){
-        
-        $('.menu-ham').click(function(){
-            
-            if($('.menu').css('right') == '0px'){
-                $('.menu').css('right', '-500px');
-                $('.ham-one').css({'background' : '#17a19f', 'transform' : 'rotate(0deg)', 'margin-top' : '0', 'width' : '100%'});
-                $('.ham-three').css({'background' : '#17a19f', 'transform' : 'rotate(0deg)', 'margin-top' : '0', 'width' : '100%'});
-                $('.ham-two').css('display', 'block');
-            }else{
-                $('.menu').css('right', '0px');
-                 $('.ham-one').css({'background' : '#2b2b2b', 'transform' : 'rotate(-45deg)', 'margin-top' : '27px', 'width' : '70%'});
-                $('.ham-two').css('display', 'none');
-                $('.ham-three').css({'background' : '#2b2b2b', 'transform' : 'rotate(45deg)', 'margin-top' : '-27px', 'width' : '70%'});
-                
-            }
-        });
-        
-           
-        
-    }],
-    templateUrl: 'www/views/partial/menubar.html'
-  };
-    
-
-    
-    
-});
 app.factory('articles', function() {
 	
     
     var articles = [
       {
           title : "Piilzners boilerplate",
-          desc : "Piilzners boilerplate är en Angular.JS filstruktur som inkluderar gulp, Angular.JS, jQuery, Bootstrap och Font-awesome.",
+          desc : "Piilzners boilerplate är en Angular.JS filstruktur som inkluderar gulp, Angular.JS, jQuery, Bootstrap och Font-awesome. Ett smidigt sätt när man startar ett nytt projekt. Det är bara clona projektet från github och man är igång. ",
           image : "www/img/pbp.jpg",
           date : "12-12-2015",
+          author : "Nils Löfgren",
+          site : "https://github.com/piilzner/Boilerplate-for-AngularJS",
           genre : [
               "kod"
           ]
@@ -242,9 +259,11 @@ app.factory('articles', function() {
       },
       {
           title : "Ari´s Gold",
-          desc : "Som en kul sidoprojekt så gjorde jag en ölflaske-etikett och detta är resultatet.",
+          desc : "Ari´s Gold är resultatet av ett kul sidoprojekt. Tanken var att göra en rolig öl-etikett design och jag valde Ari Gold från 'Entourage'. Hade denna öl funnits i butik hade jag inte tvekat 1 sekund att köpa den.  ",
           image : "www/img/beer.jpg",
           date : "12-12-2015",
+          author : "Nils Löfgren",
+          site : "",
           genre : [
               "design"
           ]
@@ -283,8 +302,7 @@ app.factory('projects', function() {
           date : "15/11-2015",
           site : "http://happnings.se/",
           images : [
-              "www/img/project/dotlist/projImage.jpg",
-              "https://mir-s3-cdn-cf.behance.net/project_modules/hd/19551931720889.565dff2ae3e6f.jpg"
+              "www/img/project/happnings/projImage.jpg"
           ]
       },
       
@@ -295,12 +313,12 @@ app.factory('projects', function() {
           title : "DotList",
           thumb : "www/img/project/dotlist/thumb.png",
           desc : 
-            "happnings är en applikation som listar alla event i din stad på en central plats. Ett enkelt sätt att se vad som händer omkring dig. Användaren kan söka på stad, kategori, datum, titel, mm för att snabbt hitta ett event. Du kan även gilla för att få en notifiering dagen innan för att inte glömma bort vad du vill gå på. Idén är att göra det lättare för användarna att hitta event samt för arrangörerna att nå ut till en bredare publik än tidigare.  ",
+            "DotList är en mobilapplikation där användaren kan skapa inköpslistor eller att-göra-listor. Enkelt lägga till och uppdatera sina listor och synka dem med vänner eller respektive.  ",
           
           coverImage : "www/img/project/dotlist/cover.jpg",
-          tools : "Photoshop, Angular, Ionic",
-          date : "15/11-2015",
-          site : "http://happnings.se/",
+          tools : "Photoshop, illustrator, Angular, Ionic",
+          date : "15/6-2015",
+          site : "",
           images : [
               "www/img/project/dotlist/projImage.jpg"
           ]
@@ -313,15 +331,14 @@ app.factory('projects', function() {
           title : "Björkeberg.com",
           thumb : "www/img/project/bjorkeberg/thumb.jpg",
           desc : 
-            "happnings är en applikation som listar alla event i din stad på en central plats. Ett enkelt sätt att se vad som händer omkring dig. Användaren kan söka på stad, kategori, datum, titel, mm för att snabbt hitta ett event. Du kan även gilla för att få en notifiering dagen innan för att inte glömma bort vad du vill gå på. Idén är att göra det lättare för användarna att hitta event samt för arrangörerna att nå ut till en bredare publik än tidigare.  ",
+            "Björkebergs hembyggdsförening ville ha en uppfräschning på sin tidigare statiska html-sida. Dem ville att den skulle vara enkel att uppdatera och lägga till nytt innehåll vilket gjorde att vi valde wordpress som verktyg i detta projekt. ",
           
           coverImage : "www/img/project/bjorkeberg/cover.jpg",
-          tools : "Photoshop, Angular, Ionic",
-          date : "15/11-2015",
+          tools : "Photoshop, Wordpress",
+          date : "15/11-2014",
           site : "http://www.bjorkeberg.com",
           images : [
-              "www/img/project/happnings/cover.jpg",
-              "www/img/project/bjorkeberg/cover.jpg"
+              "www/img/project/bjorkeberg/projImage.jpg"
           ]
       }
        
