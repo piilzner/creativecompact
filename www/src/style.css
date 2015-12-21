@@ -251,6 +251,7 @@ section {
         -ms-flex-direction: column;
             flex-direction: column;
     color: #fff;
+    cursor: pointer;
     padding: 10px;
     opacity: 0; }
     .project-home .comp-box .comp-title {
