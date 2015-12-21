@@ -206,7 +206,7 @@ section {
   position: relative;
   width: 800px;
   height: 400px;
-  margin: 0 10px 20px;
+  margin: 0 10px 80px;
   overflow: hidden;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
   cursor: pointer; }
@@ -546,7 +546,7 @@ section {
   z-index: 1; }
   @media screen and (max-width: 520px) {
     #simple-about {
-      margin-bottom: 175px; } }
+      margin-bottom: 185px; } }
   #simple-about .title {
     font-family: 'roboto';
     font-size: 32px;
