@@ -6,20 +6,11 @@ app.controller('homeCtrl', ["$scope", "projects", function($scope, projects){
     
     console.log($scope.projects);
     
-    
-    $('a[href^="#"]').on('click',function (e) {
-	    e.preventDefault();
-
-	    var target = this.hash;
-	    var $target = $(target);
-
-	    $('html, body').stop().animate({
-	        'scrollTop': $target.offset().top
-	    }, 900, 'swing', function () {
-	        window.location.hash = target;
-	    });
-	});
-    
+$("#scroll-down").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#simple-about").offset().top
+    }, 2000);
+});
     
     
 }]);

@@ -510,7 +510,7 @@ section {
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-top: 40px; }
-  #intro .scroll-down {
+  #intro #scroll-down {
     position: absolute;
     bottom: 20px;
     left: 50%;
@@ -534,11 +534,8 @@ section {
             align-items: center;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out; }
-    #intro .scroll-down:hover {
+    #intro #scroll-down:hover {
       bottom: 10px; }
-    #intro .scroll-down a {
-      text-decoration: none;
-      color: #fff; }
 
 #simple-about {
   height: auto;
@@ -642,7 +639,7 @@ section {
       margin-bottom: 50px; }
   #simple-about .cta-btn {
     text-decoration: none;
-    margin: 30px 0; }
+    margin: 60px 0; }
     #simple-about .cta-btn span {
       padding: 20px 50px;
       color: #17a19f;
