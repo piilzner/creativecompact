@@ -274,9 +274,9 @@ section {
 
 .project-container {
   position: relative;
-  width: 500px;
-  height: 300px;
-  margin: 0 10px 20px;
+  width: 550px;
+  height: 350px;
+  margin: 0 25px 50px;
   overflow: hidden;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
   cursor: pointer; }
@@ -331,14 +331,14 @@ section {
     opacity: 0; }
     .project-container .comp-box .comp-title {
       font-family: 'Roboto';
-      font-size: 24px;
+      font-size: 34px;
       font-weight: 500; }
       @media screen and (max-width: 500px) {
         .project-container .comp-box .comp-title {
           font-size: 18px; } }
     .project-container .comp-box span {
       font-family: 'Roboto';
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 200;
       color: #17a19f; }
 
@@ -861,8 +861,8 @@ section {
         width: 100%;
         padding: 10px; } }
   .projects .project-wrap {
-    width: 80%;
-    margin: 0 10%;
+    width: 90%;
+    margin: 0 5%;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -878,6 +878,12 @@ section {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap; }
+    @media screen and (max-width: 1435px) {
+      .projects .project-wrap {
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center; } }
   .projects a {
     text-decoration: none;
     margin: 0;
