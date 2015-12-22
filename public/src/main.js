@@ -32,6 +32,36 @@ app.config(function($locationProvider, $routeProvider) {
     }).otherwise({ redirectTo: '/404' });
 });
 
+app.directive('footer', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'views/partial/footer.html'
+  };   
+});
+app.directive('menubar', function() {
+  return {
+    restrict: 'E',
+    controller: ['$scope', function($scope){
+        
+        $('.menu-ham').click(function(){
+            
+            if($('.menu').css('right') == '0px'){
+                $('.menu').css('right', '-500px');
+                $('.ham-one').css({'background' : '#17a19f', 'transform' : 'rotate(0deg)', 'margin-top' : '0', 'width' : '100%'});
+                $('.ham-three').css({'background' : '#17a19f', 'transform' : 'rotate(0deg)', 'margin-top' : '0', 'width' : '100%'});
+                $('.ham-two').css('display', 'block');
+            }else{
+                $('.menu').css('right', '0px');
+                 $('.ham-one').css({'background' : '#2b2b2b', 'transform' : 'rotate(-45deg)', 'margin-top' : '27px', 'width' : '70%'});
+                $('.ham-two').css('display', 'none');
+                $('.ham-three').css({'background' : '#2b2b2b', 'transform' : 'rotate(45deg)', 'margin-top' : '-27px', 'width' : '70%'});
+                
+            }
+        });    
+    }],
+    templateUrl: 'views/partial/menubar.html'
+  };    
+});
 app.controller('aboutCtrl', ["$scope", function($scope){
     $('body').scrollTop(0,0);
     
@@ -118,18 +148,11 @@ app.controller('homeCtrl', ["$scope", "projects", function($scope, projects){
     
     $scope.projects = projects.getProjects();
     
-    $('a[href^="#"]').on('click',function (e) {
-        e.preventDefault();
-    
-        var target = this.hash;
-        var $target = $(target);
-    
-        $('html, body').stop().animate({
-            'scrollTop': $target.offset().top
-        }, 900, 'swing', function () {
-            window.location.hash = target;
-        });
-    }); 
+   $("#scroll-down").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#simple-about").offset().top
+    }, 2000);
+});
     
 }]);
 app.controller('projectCtrl', ["$scope", "$routeParams", "projects", function($scope, $routeParams, projects){
@@ -150,36 +173,6 @@ app.controller('projectsCtrl', ["$scope", "$http", "projects", function($scope, 
     $('body').scrollTop(0,0);
     $scope.projects = projects.getProjects();
 }]);
-app.directive('footer', function() {
-  return {
-    restrict: 'E',
-    templateUrl: 'views/partial/footer.html'
-  };   
-});
-app.directive('menubar', function() {
-  return {
-    restrict: 'E',
-    controller: ['$scope', function($scope){
-        
-        $('.menu-ham').click(function(){
-            
-            if($('.menu').css('right') == '0px'){
-                $('.menu').css('right', '-500px');
-                $('.ham-one').css({'background' : '#17a19f', 'transform' : 'rotate(0deg)', 'margin-top' : '0', 'width' : '100%'});
-                $('.ham-three').css({'background' : '#17a19f', 'transform' : 'rotate(0deg)', 'margin-top' : '0', 'width' : '100%'});
-                $('.ham-two').css('display', 'block');
-            }else{
-                $('.menu').css('right', '0px');
-                 $('.ham-one').css({'background' : '#2b2b2b', 'transform' : 'rotate(-45deg)', 'margin-top' : '27px', 'width' : '70%'});
-                $('.ham-two').css('display', 'none');
-                $('.ham-three').css({'background' : '#2b2b2b', 'transform' : 'rotate(45deg)', 'margin-top' : '-27px', 'width' : '70%'});
-                
-            }
-        });    
-    }],
-    templateUrl: 'views/partial/menubar.html'
-  };    
-});
 app.factory('articles', function() {
 	
     var articles = [
@@ -230,7 +223,7 @@ app.factory('projects', function() {
           date : "15/11-2015",
           site : "http://happnings.se/",
           images : [
-              "img/project/dotlist/projImage.jpg"
+              "img/project/happnings/projImage.jpg"
           ]
       },
       //dotlist
@@ -262,8 +255,7 @@ app.factory('projects', function() {
           date : "15/11-2014",
           site : "http://www.bjorkeberg.com",
           images : [
-              "img/project/happnings/cover.jpg",
-              "img/project/bjorkeberg/cover.jpg"
+              "img/project/bjorkeberg/projImage.jpg"
           ]
       }  
   ];

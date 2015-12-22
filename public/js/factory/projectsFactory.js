@@ -13,7 +13,7 @@ app.factory('projects', function() {
           date : "15/11-2015",
           site : "http://happnings.se/",
           images : [
-              "img/project/dotlist/projImage.jpg"
+              "img/project/happnings/projImage.jpg"
           ]
       },
       //dotlist
@@ -45,8 +45,7 @@ app.factory('projects', function() {
           date : "15/11-2014",
           site : "http://www.bjorkeberg.com",
           images : [
-              "img/project/happnings/cover.jpg",
-              "img/project/bjorkeberg/cover.jpg"
+              "img/project/bjorkeberg/projImage.jpg"
           ]
       }  
   ];
