@@ -12,8 +12,11 @@ app.controller('contactCtrl', ["$scope", "$http", function($scope, $http){
             if(data.data.error == "novalid"){
                 $scope.errormsg = data.data.message;
             }else{
-                /* Show succses modal here!*/
-                console.log("succsess");    
+                $('.message-sucess').css('right', "0");
+        
+                setTimeout(function(){
+                    $('.message-sucess').css('right', '-320px');
+                }, 3000);
             }
         },function() {
             $scope.errormsg = "Ett fel uppstog försök igen!";
