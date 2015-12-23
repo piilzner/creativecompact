@@ -21,7 +21,7 @@ app.factory('projects', function() {
           company: "DotList",
           genre: "mobil",
           title : "DotList",
-          thumb : "img/project/dotlist/thumb.png",
+          thumb : "img/project/dotlist/thumb.jpg",
           desc : "DotList är en mobilapplikation där användaren kan skapa inköpslistor eller att-göra-listor. Enkelt lägga till och uppdatera sina listor och synka dem med vänner eller respektive.  ",
           coverImage : "img/project/dotlist/cover.jpg",
           tools : "Photoshop, Angular, Ionic",

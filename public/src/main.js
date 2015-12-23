@@ -180,7 +180,7 @@ app.factory('articles', function() {
       {
           title : "Piilzners boilerplate",
           desc : "Piilzners boilerplate är en Angular.JS filstruktur som inkluderar gulp, Angular.JS, jQuery, Bootstrap och Font-awesome. Ett smidigt sätt när man startar ett nytt projekt. Det är bara clona projektet från github och man är igång. ",
-          image : "img/pbp.jpg",
+          image : "img/articles/pbp.jpg",
           date : "27-11-2015",
           author : "Nils Löfgren",
           site : "https://github.com/piilzner/Boilerplate-for-AngularJS",
@@ -192,7 +192,7 @@ app.factory('articles', function() {
       {
           title : "Ari´s Gold",
           desc : "Ari´s Gold är resultatet av ett kul sidoprojekt. Tanken var att göra en rolig öl-etikett design och jag valde Ari Gold från 'Entourage'. Hade denna öl funnits i butik hade jag inte tvekat en sekund att köpa den.  ",
-          image : "img/beer.jpg",
+          image : "img/articles/beer.jpg",
           date : "13-10-2015",
           author : "Nils Löfgren",
           site : "",
@@ -236,7 +236,7 @@ app.factory('projects', function() {
           company: "DotList",
           genre: "mobil",
           title : "DotList",
-          thumb : "img/project/dotlist/thumb.png",
+          thumb : "img/project/dotlist/thumb.jpg",
           desc : "DotList är en mobilapplikation där användaren kan skapa inköpslistor eller att-göra-listor. Enkelt lägga till och uppdatera sina listor och synka dem med vänner eller respektive.  ",
           coverImage : "img/project/dotlist/cover.jpg",
           tools : "Photoshop, Angular, Ionic",
