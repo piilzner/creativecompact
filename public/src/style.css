@@ -186,13 +186,11 @@ section {
       .menu .menu-footer .social-icons i {
         font-size: 20px;
         -webkit-transform: scale(1);
-            -ms-transform: scale(1);
                 transform: scale(1);
         -webkit-transition: all .3s ease-in-out;
         transition: all .3s ease-in-out; }
         .menu .menu-footer .social-icons i:hover {
           -webkit-transform: scale(1.4);
-              -ms-transform: scale(1.4);
                   transform: scale(1.4);
           color: #17a19f; }
 
@@ -219,7 +217,6 @@ section {
     -webkit-transition: all 500ms ease-in-out;
     transition: all 500ms ease-in-out;
     -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
             transform: scale(1.1); }
     .project-home .project-img img {
       width: 100%;
@@ -277,9 +274,9 @@ section {
 
 .project-container {
   position: relative;
-  width: 500px;
-  height: 300px;
-  margin: 0 10px 20px;
+  width: 550px;
+  height: 350px;
+  margin: 0 25px 50px;
   overflow: hidden;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
   cursor: pointer; }
@@ -299,7 +296,6 @@ section {
     -webkit-transition: all 500ms ease-in-out;
     transition: all 500ms ease-in-out;
     -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
             transform: scale(1.1); }
     .project-container .project-img img {
       width: 100%;
@@ -335,20 +331,19 @@ section {
     opacity: 0; }
     .project-container .comp-box .comp-title {
       font-family: 'Roboto';
-      font-size: 24px;
+      font-size: 34px;
       font-weight: 500; }
       @media screen and (max-width: 500px) {
         .project-container .comp-box .comp-title {
           font-size: 18px; } }
     .project-container .comp-box span {
       font-family: 'Roboto';
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 200;
       color: #17a19f; }
 
 .project-home:hover .project-img {
   -webkit-transform: scale(1);
-      -ms-transform: scale(1);
           transform: scale(1); }
 
 .project-home:hover .comp-box {
@@ -356,7 +351,6 @@ section {
 
 .project-container:hover .project-img {
   -webkit-transform: scale(1);
-      -ms-transform: scale(1);
           transform: scale(1); }
 
 .project-container:hover .comp-box {
@@ -752,7 +746,6 @@ section {
         color: #17a19f; }
       .articles .box-wrapper .box:hover {
         -webkit-transform: scale(1.02);
-            -ms-transform: scale(1.02);
                 transform: scale(1.02);
         z-index: 9; }
   @media screen and (max-width: 520px) {
@@ -868,8 +861,8 @@ section {
         width: 100%;
         padding: 10px; } }
   .projects .project-wrap {
-    width: 80%;
-    margin: 0 10%;
+    width: 90%;
+    margin: 0 5%;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -885,6 +878,12 @@ section {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap; }
+    @media screen and (max-width: 1435px) {
+      .projects .project-wrap {
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center; } }
   .projects a {
     text-decoration: none;
     margin: 0;
@@ -1393,7 +1392,7 @@ h3 {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-image: url("../img/404small.jpg");
+  background-image: url("img/404small.jpg");
   background-size: cover;
   background-position: bottom center; }
   .not-found .not-found-container {

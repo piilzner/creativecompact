@@ -1,12 +1,6 @@
-
-
-    
-
-
 <menubar></menubar>
 <section class="contact">
-   
-   
+
    <p>kontakta oss på</p>
    <a href="mailto:hello@creativecompact.se">hello@creativecompact.se</a>
    <p>eller fyll i formen</p>
@@ -16,13 +10,13 @@
       <form ng-submit="sendMessage()">
        <div class="contact-option">
         
-            <input type="text" id="name" placeholder="Namn" ng-model="name">
+            <input type="text" id="name" placeholder="Namn" ng-model="name" required>
             
         </div>
         
         <div class="contact-option">
         
-            <input type="email" id="email" placeholder="email" ng-model="email">
+            <input type="email" id="email" placeholder="email" ng-model="email" required>
             
         </div>
         
@@ -38,15 +32,10 @@
         </form>
         
     </div>
-<<<<<<< HEAD:public/views/contact.html
-=======
-   
->>>>>>> master:www/views/contact.html
     
 </section>
- <div class="message-sucess">
-    <i class="fa fa-envelope"></i>
-       <p>Tack för ditt meddelande!</p> 
-   
+    <div class="message-sucess">
+        <i class="fa fa-envelope"></i>
+        <p>Tack för ditt meddelande!</p> 
     </div>
 <footer></footer>
