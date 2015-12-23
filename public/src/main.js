@@ -32,6 +32,36 @@ app.config(function($locationProvider, $routeProvider) {
     }).otherwise({ redirectTo: '/404' });
 });
 
+app.directive('footer', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'views/partial/footer.html'
+  };   
+});
+app.directive('menubar', function() {
+  return {
+    restrict: 'E',
+    controller: ['$scope', function($scope){
+        
+        $('.menu-ham').click(function(){
+            
+            if($('.menu').css('right') == '0px'){
+                $('.menu').css('right', '-500px');
+                $('.ham-one').css({'background' : '#17a19f', 'transform' : 'rotate(0deg)', 'margin-top' : '0', 'width' : '100%'});
+                $('.ham-three').css({'background' : '#17a19f', 'transform' : 'rotate(0deg)', 'margin-top' : '0', 'width' : '100%'});
+                $('.ham-two').css('display', 'block');
+            }else{
+                $('.menu').css('right', '0px');
+                 $('.ham-one').css({'background' : '#2b2b2b', 'transform' : 'rotate(-45deg)', 'margin-top' : '27px', 'width' : '70%'});
+                $('.ham-two').css('display', 'none');
+                $('.ham-three').css({'background' : '#2b2b2b', 'transform' : 'rotate(45deg)', 'margin-top' : '-27px', 'width' : '70%'});
+                
+            }
+        });    
+    }],
+    templateUrl: 'views/partial/menubar.html'
+  };    
+});
 app.controller('aboutCtrl', ["$scope", function($scope){
     $('body').scrollTop(0,0);
     
@@ -143,43 +173,13 @@ app.controller('projectsCtrl', ["$scope", "$http", "projects", function($scope, 
     $('body').scrollTop(0,0);
     $scope.projects = projects.getProjects();
 }]);
-app.directive('footer', function() {
-  return {
-    restrict: 'E',
-    templateUrl: 'views/partial/footer.html'
-  };   
-});
-app.directive('menubar', function() {
-  return {
-    restrict: 'E',
-    controller: ['$scope', function($scope){
-        
-        $('.menu-ham').click(function(){
-            
-            if($('.menu').css('right') == '0px'){
-                $('.menu').css('right', '-500px');
-                $('.ham-one').css({'background' : '#17a19f', 'transform' : 'rotate(0deg)', 'margin-top' : '0', 'width' : '100%'});
-                $('.ham-three').css({'background' : '#17a19f', 'transform' : 'rotate(0deg)', 'margin-top' : '0', 'width' : '100%'});
-                $('.ham-two').css('display', 'block');
-            }else{
-                $('.menu').css('right', '0px');
-                 $('.ham-one').css({'background' : '#2b2b2b', 'transform' : 'rotate(-45deg)', 'margin-top' : '27px', 'width' : '70%'});
-                $('.ham-two').css('display', 'none');
-                $('.ham-three').css({'background' : '#2b2b2b', 'transform' : 'rotate(45deg)', 'margin-top' : '-27px', 'width' : '70%'});
-                
-            }
-        });    
-    }],
-    templateUrl: 'views/partial/menubar.html'
-  };    
-});
 app.factory('articles', function() {
 	
     var articles = [
       {
           title : "Piilzners boilerplate",
           desc : "Piilzners boilerplate är en Angular.JS filstruktur som inkluderar gulp, Angular.JS, jQuery, Bootstrap och Font-awesome. Ett smidigt sätt när man startar ett nytt projekt. Det är bara clona projektet från github och man är igång. ",
-          image : "img/pbp.jpg",
+          image : "img/articles/pbp.jpg",
           date : "27-11-2015",
           author : "Nils Löfgren",
           site : "https://github.com/piilzner/Boilerplate-for-AngularJS",
@@ -191,7 +191,7 @@ app.factory('articles', function() {
       {
           title : "Ari´s Gold",
           desc : "Ari´s Gold är resultatet av ett kul sidoprojekt. Tanken var att göra en rolig öl-etikett design och jag valde Ari Gold från 'Entourage'. Hade denna öl funnits i butik hade jag inte tvekat en sekund att köpa den.  ",
-          image : "img/beer.jpg",
+          image : "img/articles/beer.jpg",
           date : "13-10-2015",
           author : "Nils Löfgren",
           site : "",
@@ -235,7 +235,7 @@ app.factory('projects', function() {
           company: "DotList",
           genre: "mobil",
           title : "DotList",
-          thumb : "img/project/dotlist/thumb.png",
+          thumb : "img/project/dotlist/thumb.jpg",
           desc : "DotList är en mobilapplikation där användaren kan skapa inköpslistor eller att-göra-listor. Enkelt lägga till och uppdatera sina listor och synka dem med vänner eller respektive.  ",
           coverImage : "img/project/dotlist/cover.jpg",
           tools : "Photoshop, Angular, Ionic",
