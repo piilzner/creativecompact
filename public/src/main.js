@@ -1,5 +1,10 @@
 var app = angular.module('app', ['ngRoute', 'wu.masonry']);
 app.config(function($locationProvider, $routeProvider) {
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+    });
+
 	$routeProvider.when('/', {
 		templateUrl: 'views/home.html',
 		controller: 'homeCtrl'
@@ -32,36 +37,6 @@ app.config(function($locationProvider, $routeProvider) {
     }).otherwise({ redirectTo: '/404' });
 });
 
-app.directive('footer', function() {
-  return {
-    restrict: 'E',
-    templateUrl: 'views/partial/footer.html'
-  };   
-});
-app.directive('menubar', function() {
-  return {
-    restrict: 'E',
-    controller: ['$scope', function($scope){
-        
-        $('.menu-ham').click(function(){
-            
-            if($('.menu').css('right') == '0px'){
-                $('.menu').css('right', '-500px');
-                $('.ham-one').css({'background' : '#17a19f', 'transform' : 'rotate(0deg)', 'margin-top' : '0', 'width' : '100%'});
-                $('.ham-three').css({'background' : '#17a19f', 'transform' : 'rotate(0deg)', 'margin-top' : '0', 'width' : '100%'});
-                $('.ham-two').css('display', 'block');
-            }else{
-                $('.menu').css('right', '0px');
-                 $('.ham-one').css({'background' : '#2b2b2b', 'transform' : 'rotate(-45deg)', 'margin-top' : '27px', 'width' : '70%'});
-                $('.ham-two').css('display', 'none');
-                $('.ham-three').css({'background' : '#2b2b2b', 'transform' : 'rotate(45deg)', 'margin-top' : '-27px', 'width' : '70%'});
-                
-            }
-        });    
-    }],
-    templateUrl: 'views/partial/menubar.html'
-  };    
-});
 app.controller('aboutCtrl', ["$scope", function($scope){
     $('body').scrollTop(0,0);
     
@@ -174,6 +149,36 @@ app.controller('projectsCtrl', ["$scope", "$http", "projects", function($scope, 
     $('body').scrollTop(0,0);
     $scope.projects = projects.getProjects();
 }]);
+app.directive('footer', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'views/partial/footer.html'
+  };   
+});
+app.directive('menubar', function() {
+  return {
+    restrict: 'E',
+    controller: ['$scope', function($scope){
+        
+        $('.menu-ham').click(function(){
+            
+            if($('.menu').css('right') == '0px'){
+                $('.menu').css('right', '-500px');
+                $('.ham-one').css({'background' : '#17a19f', 'transform' : 'rotate(0deg)', 'margin-top' : '0', 'width' : '100%'});
+                $('.ham-three').css({'background' : '#17a19f', 'transform' : 'rotate(0deg)', 'margin-top' : '0', 'width' : '100%'});
+                $('.ham-two').css('display', 'block');
+            }else{
+                $('.menu').css('right', '0px');
+                 $('.ham-one').css({'background' : '#2b2b2b', 'transform' : 'rotate(-45deg)', 'margin-top' : '27px', 'width' : '70%'});
+                $('.ham-two').css('display', 'none');
+                $('.ham-three').css({'background' : '#2b2b2b', 'transform' : 'rotate(45deg)', 'margin-top' : '-27px', 'width' : '70%'});
+                
+            }
+        });    
+    }],
+    templateUrl: 'views/partial/menubar.html'
+  };    
+});
 app.factory('articles', function() {
 	
     var articles = [

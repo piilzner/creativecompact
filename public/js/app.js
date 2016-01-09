@@ -1,5 +1,10 @@
 var app = angular.module('app', ['ngRoute', 'wu.masonry']);
 app.config(function($locationProvider, $routeProvider) {
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+    });
+
 	$routeProvider.when('/', {
 		templateUrl: 'views/home.html',
 		controller: 'homeCtrl'

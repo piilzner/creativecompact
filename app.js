@@ -22,6 +22,11 @@ app.use('/', require('./routes/index'));
 app.use('/admin', require('./routes/admin'));
 app.use('/auth', require('./routes/auth'));
 
+app.all('/*', function(req, res) {
+    res.render('index.jade', { title: 'Creative Compact, Webdevelopment' });
+});
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
