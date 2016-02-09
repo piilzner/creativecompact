@@ -1,6 +1,21 @@
 app.factory('projects', function() {
     
   var projects = [
+      {
+        //Creative coast festival
+          company: "Creative Coast Festival",
+          genre: "webb",
+          title : "Creative Coast Festival",
+          thumb : "img/project/creativecoast/cover.jpg",
+          desc : "Vi byggde en webbsida till Creative coast festival i Karlshamn.",  
+          coverImage : "www/img/project/creativecoast/cover.jpg",
+          tools : "Photoshop, Wordpress",
+          date : "15/2-2016",
+          site : "http://creativecoastfestival.se/",
+          images : [
+              ""
+          ]
+      },
       //happnings
       {
           company: "happnings",
