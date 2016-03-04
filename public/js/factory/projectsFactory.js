@@ -13,7 +13,7 @@ app.factory('projects', function() {
           date : "4/3-2016",
           site : "http://freddyhale.com",
           images : [
-              "img/project/freddyhale/projImage.jpg"
+              "img/project/freddyHale/projImage.jpg"
           ]
       },
       {
@@ -28,7 +28,7 @@ app.factory('projects', function() {
           date : "15/2-2016",
           site : "http://creativecoastfestival.se/",
           images : [
-              ""
+              "img/project/creativecoast/cover.jpg"
           ]
       },
       {
