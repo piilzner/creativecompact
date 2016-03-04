@@ -100,6 +100,7 @@ app.controller('contactCtrl', ["$scope", "$http", function($scope, $http){
                 $scope.email = "";
                 $scope.name = "";
                 $scope.message = "";
+                $scope.errormsg = "";
                 $('.message-sucess').css('right', "0");
                 setTimeout(function(){
                     $('.message-sucess').css('right', '-320px');
@@ -285,7 +286,7 @@ app.factory('projects', function() {
           coverImage : "img/project/dotlist/cover.jpg",
           tools : "Photoshop, Angular, Ionic",
           date : "15/11-2015",
-          site : "http://happnings.se/",
+          site : "",
           images : [
               "img/project/dotlist/projImage.jpg"
           ]

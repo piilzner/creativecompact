@@ -13,6 +13,7 @@ app.controller('contactCtrl', ["$scope", "$http", function($scope, $http){
                 $scope.email = "";
                 $scope.name = "";
                 $scope.message = "";
+                $scope.errormsg = "";
                 $('.message-sucess').css('right', "0");
                 setTimeout(function(){
                     $('.message-sucess').css('right', '-320px');

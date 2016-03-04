@@ -71,7 +71,7 @@ app.factory('projects', function() {
           coverImage : "img/project/dotlist/cover.jpg",
           tools : "Photoshop, Angular, Ionic",
           date : "15/11-2015",
-          site : "http://happnings.se/",
+          site : "",
           images : [
               "img/project/dotlist/projImage.jpg"
           ]
