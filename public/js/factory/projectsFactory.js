@@ -1,6 +1,51 @@
 app.factory('projects', function() {
     
   var projects = [
+      {
+        //Freddy Hale
+          company: "Freddy Hale",
+          genre: "Webb",
+          title : "Freddy Hale",
+          thumb : "img/project/freddyHale/thumb.jpg",
+          desc : "Enkel och stilren! Freddy beställde sidan med en klar vision av vad han ville ha och ett nära sammarbete resulterade i en sleek och sexig produkt. Sidan har en klar kännsla som passar en modern och nyskapande artist. Vi känner oss ödmjuka och stolta att ha fått uppdraget att hjälpa Freddy Hale på vägen mot en stjärna på Hollywood Boulevard!",  
+          coverImage : "www/img/project/FreddyHale/thumb.jpg",
+          tools : "Photoshop, Html, Css3",
+          date : "4/3-2016",
+          site : "http://freddyhale.com",
+          images : [
+              "img/project/freddyhale/projImage.jpg"
+          ]
+      },
+      {
+        //Creative coast festival
+          company: "Creative Coast Festival",
+          genre: "Webb",
+          title : "Creative Coast Festival",
+          thumb : "img/project/creativecoast/cover.jpg",
+          desc : "Vi byggde en webbsida till Creative coast festival i Karlshamn.",  
+          coverImage : "www/img/project/creativecoast/cover.jpg",
+          tools : "Photoshop, Wordpress",
+          date : "15/2-2016",
+          site : "http://creativecoastfestival.se/",
+          images : [
+              ""
+          ]
+      },
+      {
+        //Cural
+          company: "Cural",
+          genre: "Webb, Logo",
+          title : "Cural",
+          thumb : "img/project/cural/thumb.jpg",
+          desc : "Cural är ett internt projekt som vi jobbat med i sammarbete med Pontus Johansson, Andreas Lindvall och Viktorija Meinoryte. Visionen med projektet var att skapa en klassisk läkemedelssida med en twist. Vi försöker att utmana klassiska tankesätt och ge konkret exempel på situerad kunskapen genom diskussion. Det är 50% chans att användaren gillar sidan eller inte. In och titta, uppdatera sidan och se vad som händer!",  
+          coverImage : "www/img/project/cural/thumb.jpg",
+          tools : "Illustrator, Angular, Html, Css3, C#",
+          date : "29/2-2016",
+          site : "http://magralol.github.io/cural/#/",
+          images : [
+              "img/project/cural/projImage.jpg"
+          ]
+      },
       //happnings
       {
           company: "happnings",

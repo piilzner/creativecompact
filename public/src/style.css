@@ -7,6 +7,13 @@ section {
   width: 100vw;
   height: auto; }
 
+.box {
+  padding: 0 !important;
+  border: none !important; }
+
+.comp-box {
+  display: none; }
+
 .menu-ham {
   position: fixed;
   top: 30px;
@@ -808,7 +815,7 @@ section {
             flex-direction: column; }
     .article .article-title img {
       width: 100%;
-      height: 500px;
+      height: auto;
       margin: 0 15%; }
     .article .article-title p {
       font-size: 18px; }
@@ -947,8 +954,7 @@ section {
     font-weight: 600;
     text-transform: uppercase; }
   .project .proj-container {
-    position: relative;
-    width: 100%; }
+    position: relative; }
     .project .proj-container .proj-content, .project .proj-container .proj-images {
       display: -webkit-box;
       display: -webkit-flex;
@@ -1002,6 +1008,49 @@ section {
       .project a .proj-back-btn:hover {
         background: #17a19f;
         color: #fff; }
+
+.box-wrapper {
+  width: 100%;
+  margin: 0 auto; }
+  .box-wrapper a {
+    text-decoration: none;
+    color: #2b2b2b; }
+  .box-wrapper .box {
+    position: relative;
+    width: 350px;
+    padding: 10px;
+    margin: 5px;
+    background: #fafafa;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    float: left;
+    cursor: pointer;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out; }
+    .box-wrapper .box:after {
+      clear: both; }
+    .box-wrapper .box img {
+      width: 100%;
+      height: auto; }
+    .box-wrapper .box span {
+      color: #9f9f9f; }
+    .box-wrapper .box .info-bar span {
+      margin-right: 10px;
+      color: #17a19f; }
+    .box-wrapper .box:hover {
+      -webkit-transform: scale(1.02);
+              transform: scale(1.02);
+      z-index: 9; }
+
+@media screen and (max-width: 520px) {
+  margin-bottom: 170px; }
+
+@media screen and (max-width: 400px) {
+  .box-wrapper {
+    width: 98%;
+    margin: 30px 1%; }
+    .box-wrapper .box {
+      width: 300px; } }
 
 h3 {
   width: 100%;
@@ -1427,3 +1476,10 @@ body {
 
 ::-webkit-scrollbar {
   display: none; }
+
+.centered {
+  margin: 0 auto;
+  float: none; }
+
+.clearfix {
+  clear: both; }
