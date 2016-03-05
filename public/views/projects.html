@@ -1,0 +1,26 @@
+<menubar></menubar>
+<footer></footer>
+<section class="projects">
+    <h2>Projekt</h2>
+    <h3>Jobb vi utfört.</h3>
+    
+  <div class="row">
+   <div class="col-sm-12">
+    <div ng-repeat="project in projects" class="col-md-6 project-container">
+      <div class="project-img">
+          <img src="{{ project.thumb }}" alt="">
+      </div>
+      <a ng-href="#/projects/project/{{$index}}">
+          <div class="comp-box">
+              <div class="comp-title">{{ project.company }}</div>
+              <span>{{ project.genre }}</span>
+          </div>
+      </a>
+      </div>
+  </div>
+</div>
+    
+</section>
+
+
+

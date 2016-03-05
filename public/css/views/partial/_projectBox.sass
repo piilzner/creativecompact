@@ -1,0 +1,134 @@
+.project-home
+    position: relative
+    width: 800px
+    height: 400px
+    margin: 0 10px 80px
+    overflow: hidden
+    box-shadow: 0 5px 5px rgba(0,0,0,0.4)
+    cursor: pointer
+    
+    
+    .project-img
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        transition: all 500ms ease-in-out
+        transform: scale(1.1)
+        img
+            width: 100%
+            height: 100%
+
+    .comp-box
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: rgba(0,0,0,0.7)
+        transition: all 300ms ease-in-out
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        color: #fff
+        cursor: pointer
+        padding: 10px
+        opacity: 0
+        
+        .comp-title
+            font:
+                family: 'Roboto'
+                size: 42px
+                weight: 500
+            @media screen and (max-width: 800px)
+                font-size: 20px
+        span
+            font:
+                family: 'Roboto'
+                size: 24px
+                weight: 200
+            color: $blue
+    
+            
+            
+    @media screen and (max-width: 800px)
+        width: 500px
+        height: 250px
+    @media screen and (max-width: 500px)
+        width: 100%
+        height: 250px
+    
+
+
+.project-container
+    position: relative
+    width: 550px
+    height: 350px
+    margin: 0 25px 50px
+    overflow: hidden
+    box-shadow: 0 5px 5px rgba(0,0,0,0.4)
+    cursor: pointer
+    
+    @media screen and (max-width: 615px)
+        margin: 0 0 50px
+    @media screen and (max-width: 500px)
+        width: 320px
+        height: 250px
+    
+
+
+    .project-img
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        transition: all 500ms ease-in-out
+        transform: scale(1.1)
+        img
+            width: 100%
+            height: 100%
+
+    .comp-box
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: rgba(0,0,0,0.7)
+        transition: all 300ms ease-in-out
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        color: #fff
+        padding: 10px
+        opacity: 0
+        
+        .comp-title
+            font:
+                family: 'Roboto'
+                size: 34px
+                weight: 500
+            @media screen and (max-width: 500px)
+                font-size: 18px
+        span
+            font:
+                family: 'Roboto'
+                size: 20px
+                weight: 200
+            color: $blue
+    
+
+.project-home:hover
+    .project-img
+        transform: scale(1)
+    .comp-box
+        opacity: 1
+.project-container:hover
+    .project-img
+        transform: scale(1)
+    .comp-box
+        opacity: 1

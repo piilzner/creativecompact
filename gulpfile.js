@@ -9,22 +9,22 @@ gulp.task('default', function() {
 });
 
 gulp.task('css', function() {
-  watch('./www/css/**/*.sass', function (event) {
-        console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-        gulp.src('./www/css/**/*.sass')
-            .pipe(sass({ includePaths : ['./www/css/tools'] }))
+  watch('./public/css/**/*.sass', function (event) {
+        console.log('File ' + event.path + ' was changed');
+        gulp.src('./public/css/**/*.sass')
+            .pipe(sass({ includePaths : ['./public/css/tools'] }))
 			.pipe(autoprefixer())
-            .pipe(gulp.dest('./www/src/'));
+            .pipe(gulp.dest('./public/src/'));
     });
 });
 
 gulp.task('js', function() {
-    watch('./www/js/**/*.js', function (event) {
-        console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-		gulp.src('./www/js/**/*.js')
+    watch('./public/js/**/*.js', function (event) {
+        console.log('File ' + event.path + ' was changed');
+		gulp.src('./public/js/**/*.js')
             .pipe(concat('main.js'))
 			//.pipe(uglify())
-            .pipe(gulp.dest('./www/src/'));
+            .pipe(gulp.dest('./public/src/'));
     });
   
 });
