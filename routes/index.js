@@ -6,7 +6,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/creativecompact');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index.jade', { title: 'Creative Compact, Webdevelopment' });
+  res.render('index.ejs', { title: 'Creative Compact, Webdevelopment' });
 });
 
 router.post('/message', function(req, res) {
