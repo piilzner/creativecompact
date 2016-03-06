@@ -1,10 +1,14 @@
 <menubar></menubar>
 <div id="intro">
-    <div class="intro-logo">
-        <img src="img/logo.png" alt="">
-    </div>
-    <div class="intro-title">
-      En modern och nytänkande webbyrå
+    <div class="intro-container container-fluid">
+        <div class="row intro-logo row-fluid">
+            <div class="col-sm-12 centering text-center" style="text-align: center">
+                <img src="img/logo.png" alt="">
+            </div>
+            <div class="col-sm-10 centered clearfix entering text-center intro-title">
+                <h4>An interactive webdevelopment agency based in Karlshamn, Sweden</h4>
+            </div>
+        </div>
     </div>
 
     <div id="scroll-down">
@@ -13,27 +17,92 @@
 </div>
 
 
+
 <section id="simple-about">
-    <div class="title">Vad vi gör!</div>
-    
-    <div class="comp-desc">
-      <p>  
-Creative Compact är en modern digital webbyrå stationerad i Karlshamn, Sverige. Vi specialiserar oss på innovativa, kreativa lösningar och är inte rädda för att testa nya saker. Vår passion är att från en idé kunna skapa något vackert och funktionellt, digitalt. Vi har även en stor passion för kaffedrickande. Projekten sträcker sig från omfattande webbsidor till mobil appar. Vi är inte rädda för att utmana oss själva kreativt och tänja på gränserna för vad som är möjligt, alltid sätta våra mål högt och nå utöver det vanliga. Vårt största fokus är såklar dig som kund. Vi erbjuder skräddarsydda lösningar i varje projekt för att just du ska få det du vill och kunna öka din business.
-   </p>
-   
-    <a class="cta-btn" ng-href="#/about">
-        <span>Mer om oss</span>
-    </a>
-    
+
+    <div class="row">
+        <div class="col-sm-12 centered clearfix">
+            <h2>What we do!</h2>
+        </div>
     </div>
-    
-   
-    
-    
+
+    <div class="row">
+        <div class="col-sm-10 centered clearfix">
+            <div class="col-sm-4">
+                <div class="about-us-box">
+                    <div class="row">
+                        <div class="about-icon"><i class="fa fa-desktop"></i></div>
+                    </div>
+                    <div class="row">
+                        <div class="about-title">
+                            <h2>Build a successful online presence</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="about-us-desc">We can help you improve an existing website or build you a user-friendly new website. We can also assist you with your online marketing and search engine optimization.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="about-us-box">
+                    <div class="row">
+                        <div class="about-icon"><i class="fa fa-leaf"></i></div>
+                    </div>
+                    <div class="row">
+                        <div class="about-title">
+                            <h2>Design an easy to use website for all devices</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="about-us-desc">By sketching out the information architecture, exploring visual design and developing interactive prototypes, We ensure your responsive website looks great and functions perfectly on all devices.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="about-us-box">
+                    <div class="row">
+                        <div class="about-icon"><i class="fa fa-code"></i></div>
+                    </div>
+                    <div class="row">
+                        <div class="about-title">
+                            <h2>Develop a custom web application </h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="about-us-desc">For each project, We develop a solutiontailored to your specific needs. By using the latest web technologies, We can deliver you an easy to use and efficient solution that will help you achieve your goals.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id="contact-cta">
+    <div class="row">
+        <div class="col-sm-10 centered clearfix">
+            <div class="row">
+                <h2>Building a website has never been so fun.</h2>
+            </div>
+            <div class="row">
+                <a href="#contact"><span class="cta-white">Get started</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="recent-projects" class="last-section">
+    <div class="row">
+        <div class="col-sm-10 centered clearfix">
+            <h2>Some of our recent projects</h2>
+
+
+        </div>
+
+    </div>
     <div class="recent-projects">
-       
-       <p class="proj-title">några av våra senaste projekt</p>
-       
+
+
         <div ng-repeat="project in projects | limitTo: 3" class="project-home">
             <div class="project-img">
                 <img src="{{ project.thumb }}" alt="">
@@ -44,7 +113,7 @@ Creative Compact är en modern digital webbyrå stationerad i Karlshamn, Sverige
                     <span>{{ project.genre }}</span>
                 </div>
             </a>
-<!--
+            <!--
             <div class="overlay">
                 <h4>{{ project.title }}</h4>
                 <p>{{ project.desc }}</p>
@@ -56,11 +125,11 @@ Creative Compact är en modern digital webbyrå stationerad i Karlshamn, Sverige
             </div>
 -->
         </div>
-        
-        <a class="cta-btn" ng-href="#/projects">
-            <span>Visa alla</span>
+
+        <a class="cta-color" ng-href="#/projects">
+            <span>See all</span>
         </a>
-        
+
     </div>
 </section>
 <footer></footer>

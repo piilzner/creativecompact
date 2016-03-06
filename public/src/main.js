@@ -70,7 +70,7 @@ app.controller('aboutCtrl', ["$scope", function($scope){
           name : "Filip Ramstedt",
           title : "Developer",
           image : "img/avatar/filip.jpg",
-          desc : "Console ninja. Kan allt som har med kod att göra och älskar javascript mer än någonting annat på denna jord",
+          desc : "Console ninja. Can everything that has to do with code and loves javascript more than anything on this earth",
           email : "filip@creativecompact.se"
           
       },
@@ -78,7 +78,7 @@ app.controller('aboutCtrl', ["$scope", function($scope){
           name : "Nils Löfgren",
           title : "Designer",
           image : "img/avatar/nils.jpg",
-          desc : "CSS guru. En perfektionist vars ögon blöder om inte lite animationer eller rätt färgkombinationer finns med.",
+          desc : "CSS guru. A perfectionist whose eyes are bleeding if not a little animations or the right color combinations are included.",
           email : "nils@creativecompact.se"
           
       },
@@ -86,7 +86,7 @@ app.controller('aboutCtrl', ["$scope", function($scope){
           name : "Oskar Stålstierna",
           title : "Project manager",
           image : "img/avatar/oskar.jpg",
-          desc : "Extrem chailatte drickare som kan dö för retro manbags och stockholm stad. Organiserad och punktlig tack vare google calender",
+          desc : "Extreme chai latte drinker who can die for retro manbags and Stockholm. Organized and punctual, thanks to Google Calendar",
           email : "oskar@creativecompact.se"
           
       }
@@ -117,6 +117,47 @@ app.controller('articlesCtrl', ["$scope", "$http", "articles", function($scope, 
 }]);
 app.controller('contactCtrl', ["$scope", "$http", function($scope, $http){
     $('body').scrollTop(0,0);
+    
+    
+    
+    
+        
+       
+            // When the window has finished loading create our google map below
+            google.maps.event.addDomListener(window, 'load', init);
+        
+            function init() {
+                // Basic options for a simple Google Map
+                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+                var mapOptions = {
+                    // How zoomed in you want the map to start at (always required)
+                    zoom: 16,
+
+                    // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(56.1641 , 14.8811), // New York
+
+                    // How you would like to style the map. 
+                    // This is where you would paste any style found on Snazzy Maps.
+                    styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
+                };
+
+                // Get the HTML DOM element that will contain your map 
+                // We are using a div with id="map" seen below in the <body>
+                var mapElement = document.getElementById('map');
+
+                // Create the Google Map using our element and options defined above
+                var map = new google.maps.Map(mapElement, mapOptions);
+
+                // Let's also add a marker while we're at it
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(56.1641 , 14.8811),
+                    map: map,
+                    title: 'Snazzy!'
+                });
+            }
+    
+    
+    
     
     $scope.sendMessage = function() {
         $http.post("/message", {
@@ -170,9 +211,20 @@ app.controller('projectCtrl', ["$scope", "$routeParams", "projects", function($s
     });
   
 }]);
-app.controller('projectsCtrl', ["$scope", "$http", "projects", function($scope, $http, projects){
-    $('body').scrollTop(0,0);
+app.controller('projectsCtrl', ["$scope", "$http", "projects", function ($scope, $http, projects) {
+    $('body').scrollTop(0, 0);
     $scope.projects = projects.getProjects();
+
+    //$scope.filters = "";
+
+    $('.proj-wrapper').masonry({
+        itemSelector: '.project-box'
+    });
+
+    $scope.setFilter = function (filter) {
+        $scope.filters = filter;
+    }
+
 }]);
 app.factory('articles', function() {
 	
@@ -219,7 +271,7 @@ app.factory('projects', function() {
       {
         //Freddy Hale
           company: "Freddy Hale",
-          genre: "Webb",
+          genre: "Web",
           title : "Freddy Hale",
           thumb : "img/project/freddyHale/thumb.jpg",
           desc : "Enkel och stilren! Freddy beställde sidan med en klar vision av vad han ville ha och ett nära sammarbete resulterade i en sleek och sexig produkt. Sidan har en klar kännsla som passar en modern och nyskapande artist. Vi känner oss ödmjuka och stolta att ha fått uppdraget att hjälpa Freddy Hale på vägen mot en stjärna på Hollywood Boulevard!",  
@@ -234,9 +286,9 @@ app.factory('projects', function() {
       {
         //Creative coast festival
           company: "Creative Coast Festival",
-          genre: "Webb",
+          genre: "Web",
           title : "Creative Coast Festival",
-          thumb : "img/project/creativecoast/cover.jpg",
+          thumb : "img/project/creativecoast/thumb.jpg",
           desc : "Vi byggde en webbsida till Creative coast festival i Karlshamn.",  
           coverImage : "www/img/project/creativecoast/cover.jpg",
           tools : "Photoshop, Wordpress",
@@ -249,7 +301,7 @@ app.factory('projects', function() {
       {
         //Cural
           company: "Cural",
-          genre: "Webb, Logo",
+          genre: "Web / Logo",
           title : "Cural",
           thumb : "img/project/cural/thumb.jpg",
           desc : "Cural är ett internt projekt som vi jobbat med i sammarbete med Pontus Johansson, Andreas Lindvall och Viktorija Meinoryte. Visionen med projektet var att skapa en klassisk läkemedelssida med en twist. Vi försöker att utmana klassiska tankesätt och ge konkret exempel på situerad kunskapen genom diskussion. Det är 50% chans att användaren gillar sidan eller inte. In och titta, uppdatera sidan och se vad som händer!",  
@@ -264,7 +316,7 @@ app.factory('projects', function() {
       //happnings
       {
           company: "happnings",
-          genre: "webb/mobil",
+          genre: "Web",
           title : "happnings",
           thumb : "img/project/happnings/thumb.jpg",
           desc : "happnings är en applikation som listar alla event i din stad på en central plats. Ett enkelt sätt att se vad som händer omkring dig. Användaren kan söka på stad, kategori, datum, titel, mm för att snabbt hitta ett event. Du kan även gilla för att få en notifiering dagen innan för att inte glömma bort vad du vill gå på. Idén är att göra det lättare för användarna att hitta event samt för arrangörerna att nå ut till en bredare publik än tidigare.  ",  
@@ -279,7 +331,7 @@ app.factory('projects', function() {
       //dotlist
       {
           company: "DotList",
-          genre: "mobil",
+          genre: "Mobile",
           title : "DotList",
           thumb : "img/project/dotlist/thumb.jpg",
           desc : "DotList är en mobilapplikation där användaren kan skapa inköpslistor eller att-göra-listor. Enkelt lägga till och uppdatera sina listor och synka dem med vänner eller respektive.  ",
@@ -294,7 +346,7 @@ app.factory('projects', function() {
       //Bjorkeberg
       {
           company: "Björkebergs hembygdsförening",
-          genre: "webb",
+          genre: "Web",
           title : "Björkeberg.com",
           thumb : "img/project/bjorkeberg/thumb.jpg",
           desc : 
