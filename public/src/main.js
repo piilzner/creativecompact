@@ -32,36 +32,6 @@ app.config(function($locationProvider, $routeProvider) {
     }).otherwise({ redirectTo: '/404' });
 });
 
-app.directive('footer', function() {
-  return {
-    restrict: 'E',
-    templateUrl: 'views/partial/footer.html'
-  };   
-});
-app.directive('menubar', function() {
-  return {
-    restrict: 'E',
-    controller: ['$scope', function($scope){
-        
-        $('.menu-ham').click(function(){
-            
-            if($('.menu').css('right') == '0px'){
-                $('.menu').css('right', '-500px');
-                $('.ham-one').css({'background' : '#17a19f', 'transform' : 'rotate(0deg)', 'margin-top' : '0', 'width' : '100%'});
-                $('.ham-three').css({'background' : '#17a19f', 'transform' : 'rotate(0deg)', 'margin-top' : '0', 'width' : '100%'});
-                $('.ham-two').css('display', 'block');
-            }else{
-                $('.menu').css('right', '0px');
-                 $('.ham-one').css({'background' : '#2b2b2b', 'transform' : 'rotate(-45deg)', 'margin-top' : '27px', 'width' : '70%'});
-                $('.ham-two').css('display', 'none');
-                $('.ham-three').css({'background' : '#2b2b2b', 'transform' : 'rotate(45deg)', 'margin-top' : '-27px', 'width' : '70%'});
-                
-            }
-        });    
-    }],
-    templateUrl: 'views/partial/menubar.html'
-  };    
-});
 app.controller('aboutCtrl', ["$scope", function($scope){
     $('body').scrollTop(0,0);
     
@@ -120,8 +90,6 @@ app.controller('contactCtrl', ["$scope", "$http", function($scope, $http){
     
     
     
-    
-        
        
             // When the window has finished loading create our google map below
             google.maps.event.addDomListener(window, 'load', init);
@@ -131,7 +99,7 @@ app.controller('contactCtrl', ["$scope", "$http", function($scope, $http){
                 // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
                 var mapOptions = {
                     // How zoomed in you want the map to start at (always required)
-                    zoom: 16,
+                    zoom: 12,
 
                     // The latitude and longitude to center the map (always required)
                     center: new google.maps.LatLng(56.1641 , 14.8811), // New York
@@ -152,7 +120,7 @@ app.controller('contactCtrl', ["$scope", "$http", function($scope, $http){
                 var marker = new google.maps.Marker({
                     position: new google.maps.LatLng(56.1641 , 14.8811),
                     map: map,
-                    title: 'Snazzy!'
+                    title: 'Creative Compact!'
                 });
             }
     
@@ -226,6 +194,36 @@ app.controller('projectsCtrl', ["$scope", "$http", "projects", function ($scope,
     }
 
 }]);
+app.directive('footer', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'views/partial/footer.html'
+  };   
+});
+app.directive('menubar', function() {
+  return {
+    restrict: 'E',
+    controller: ['$scope', function($scope){
+        
+        $('.menu-ham').click(function(){
+            
+            if($('.menu').css('right') == '0px'){
+                $('.menu').css('right', '-500px');
+                $('.ham-one').css({'background' : '#17a19f', 'transform' : 'rotate(0deg)', 'margin-top' : '0', 'width' : '100%'});
+                $('.ham-three').css({'background' : '#17a19f', 'transform' : 'rotate(0deg)', 'margin-top' : '0', 'width' : '100%'});
+                $('.ham-two').css('display', 'block');
+            }else{
+                $('.menu').css('right', '0px');
+                 $('.ham-one').css({'background' : '#2b2b2b', 'transform' : 'rotate(-45deg)', 'margin-top' : '27px', 'width' : '70%'});
+                $('.ham-two').css('display', 'none');
+                $('.ham-three').css({'background' : '#2b2b2b', 'transform' : 'rotate(45deg)', 'margin-top' : '-27px', 'width' : '70%'});
+                
+            }
+        });    
+    }],
+    templateUrl: 'views/partial/menubar.html'
+  };    
+});
 app.factory('articles', function() {
 	
     var articles = [

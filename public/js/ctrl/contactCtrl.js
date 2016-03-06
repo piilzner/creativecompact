@@ -3,8 +3,6 @@ app.controller('contactCtrl', ["$scope", "$http", function($scope, $http){
     
     
     
-    
-        
        
             // When the window has finished loading create our google map below
             google.maps.event.addDomListener(window, 'load', init);
@@ -14,7 +12,7 @@ app.controller('contactCtrl', ["$scope", "$http", function($scope, $http){
                 // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
                 var mapOptions = {
                     // How zoomed in you want the map to start at (always required)
-                    zoom: 16,
+                    zoom: 12,
 
                     // The latitude and longitude to center the map (always required)
                     center: new google.maps.LatLng(56.1641 , 14.8811), // New York
@@ -35,7 +33,7 @@ app.controller('contactCtrl', ["$scope", "$http", function($scope, $http){
                 var marker = new google.maps.Marker({
                     position: new google.maps.LatLng(56.1641 , 14.8811),
                     map: map,
-                    title: 'Snazzy!'
+                    title: 'Creative Compact!'
                 });
             }
     
