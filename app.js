@@ -23,7 +23,7 @@ app.use('/admin', require('./routes/admin'));
 app.use('/auth', require('./routes/auth'));
 
 app.all('/*', function(req, res) {
-    res.render('index.jade', { title: 'Creative Compact, Webdevelopment' });
+    res.render('index.ejs', { title: 'Creative Compact, Webdevelopment' });
 });
 
 
