@@ -4,40 +4,40 @@ app.factory('projects', function() {
       {
         //Freddy Hale
           company: "Freddy Hale",
-          genre: "Webb",
+          genre: "Web",
           title : "Freddy Hale",
           thumb : "img/project/freddyHale/thumb.jpg",
-          desc : "Enkel och stilren! Freddy beställde sidan med en klar vision av vad han ville ha och ett nära sammarbete resulterade i en sleek och sexig produkt. Sidan har en klar kännsla som passar en modern och nyskapande artist. Vi känner oss ödmjuka och stolta att ha fått uppdraget att hjälpa Freddy Hale på vägen mot en stjärna på Hollywood Boulevard!",  
+          desc : "Simple and stylish! Freddy ordered this site with a clear vision of what he wanted and close collaboration resulted in a sleek and sexy product. This webpage has a clear will diminish that fits a modern and innovative artist. We are humbled and proud to have been contracted to help Freddy Hale towards a star on Hollywood Boulevard !",  
           coverImage : "www/img/project/FreddyHale/thumb.jpg",
           tools : "Photoshop, Html, Css3",
           date : "4/3-2016",
           site : "http://freddyhale.com",
           images : [
-              "img/project/freddyhale/projImage.jpg"
+              "img/project/freddyHale/projImage.jpg"
           ]
       },
       {
         //Creative coast festival
           company: "Creative Coast Festival",
-          genre: "Webb",
+          genre: "Web",
           title : "Creative Coast Festival",
-          thumb : "img/project/creativecoast/cover.jpg",
-          desc : "Vi byggde en webbsida till Creative coast festival i Karlshamn.",  
+          thumb : "img/project/creativecoast/thumb.jpg",
+          desc : "We built a website for the Creative Coast Festival. Creative Coast Festival is a digital festival based in Karlshamn where the exhibitors in the gaming and web genre from around the world come and exhibit their projects.",  
           coverImage : "www/img/project/creativecoast/cover.jpg",
           tools : "Photoshop, Wordpress",
           date : "15/2-2016",
           site : "http://creativecoastfestival.se/",
           images : [
-              ""
+              "img/project/creativecoast/cover.jpg"
           ]
       },
       {
         //Cural
           company: "Cural",
-          genre: "Webb, Logo",
+          genre: "Web / Logo",
           title : "Cural",
           thumb : "img/project/cural/thumb.jpg",
-          desc : "Cural är ett internt projekt som vi jobbat med i sammarbete med Pontus Johansson, Andreas Lindvall och Viktorija Meinoryte. Visionen med projektet var att skapa en klassisk läkemedelssida med en twist. Vi försöker att utmana klassiska tankesätt och ge konkret exempel på situerad kunskapen genom diskussion. Det är 50% chans att användaren gillar sidan eller inte. In och titta, uppdatera sidan och se vad som händer!",  
+          desc : "Cural is an internal project that we worked on in collaboration with Pontus Johansson , Andreas Lindvall and Viktorija Meinoryte. The vision of the project was to create a classic medical website with a twist. We try to challenge traditional ways of thinking and to provide concrete examples Situated knowledge through discussion.",  
           coverImage : "www/img/project/cural/thumb.jpg",
           tools : "Illustrator, Angular, Html, Css3, C#",
           date : "29/2-2016",
@@ -49,10 +49,10 @@ app.factory('projects', function() {
       //happnings
       {
           company: "happnings",
-          genre: "webb/mobil",
+          genre: "Web",
           title : "happnings",
           thumb : "img/project/happnings/thumb.jpg",
-          desc : "happnings är en applikation som listar alla event i din stad på en central plats. Ett enkelt sätt att se vad som händer omkring dig. Användaren kan söka på stad, kategori, datum, titel, mm för att snabbt hitta ett event. Du kan även gilla för att få en notifiering dagen innan för att inte glömma bort vad du vill gå på. Idén är att göra det lättare för användarna att hitta event samt för arrangörerna att nå ut till en bredare publik än tidigare.  ",  
+          desc : "Happnings is an application that lists all events in your city in a central location . An easy way to see what is happening around you . The user can search by city , category, date, title , etc. to quickly find an event. You may also like to have alerted the day before to not forget what you want to go on . The idea is to make it easier for users to find events as well as for the organizers to reach out to a wider audience than before. ",  
           coverImage : "www/img/project/happnings/cover.jpg",
           tools : "Photoshop, Angular, Ionic",
           date : "15/11-2015",
@@ -64,10 +64,10 @@ app.factory('projects', function() {
       //dotlist
       {
           company: "DotList",
-          genre: "mobil",
+          genre: "Mobile",
           title : "DotList",
           thumb : "img/project/dotlist/thumb.jpg",
-          desc : "DotList är en mobilapplikation där användaren kan skapa inköpslistor eller att-göra-listor. Enkelt lägga till och uppdatera sina listor och synka dem med vänner eller respektive.  ",
+          desc : "DotList is a mobile application which allows users to create shopping lists or to - do lists. Easily add and update their lists and sync them with your friends or family ",
           coverImage : "img/project/dotlist/cover.jpg",
           tools : "Photoshop, Angular, Ionic",
           date : "15/11-2015",
@@ -79,11 +79,11 @@ app.factory('projects', function() {
       //Bjorkeberg
       {
           company: "Björkebergs hembygdsförening",
-          genre: "webb",
+          genre: "Web",
           title : "Björkeberg.com",
           thumb : "img/project/bjorkeberg/thumb.jpg",
           desc : 
-            "Björkebergs hembyggdsförening ville ha en uppfräschning på sin tidigare statiska html-sida. Dem ville att den skulle vara enkel att uppdatera och lägga till nytt innehåll vilket gjorde att vi valde wordpress som verktyg i detta projekt. ",
+            "Björkebergs association wanted a refresher on their previously static html page . They wanted it to be easy to update and add new content , which meant that we chose WordPress as a tool in this project. ",
           
           coverImage : "www/img/project/bjorkeberg/cover.jpg",
           tools : "Photoshop, Wordpress",

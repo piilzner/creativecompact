@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    form(action="/auth/loggin" method="post").form-signin
+        h2.form-signin-heading Please sign in
+        label.sr-only(for='email') Email address
+        input#email.form-control(type='email', placeholder='Email', name='email', required, autofocus)
+        label.sr-only(for='password') Password
+        input#password.form-control(type='password', placeholder='Password',  name='password', required)
+        button.btn.btn-lg.btn-primary.btn-block(type='submit') Sign in
+        
+    form(action='/auth/createuser', method='post')
+      input(type="email" placeholder='email', name='email', required='')
+      input(type="password" placeholder='password', name='email', required='')
+      input(type='submit')
+        
+    

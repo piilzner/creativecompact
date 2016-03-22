@@ -5,8 +5,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 
-gulp.task('default', function() {  
-});
+gulp.task('default', ['css', 'js']);
 
 gulp.task('css', function() {
   watch('./public/css/**/*.sass', function (event) {

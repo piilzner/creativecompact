@@ -1,5 +1,10 @@
 var app = angular.module('app', ['ngRoute', 'wu.masonry']);
 app.config(function($locationProvider, $routeProvider) {
+    /*$locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+    });*/
+
 	$routeProvider.when('/', {
 		templateUrl: 'views/home.html',
 		controller: 'homeCtrl'
@@ -16,6 +21,10 @@ app.config(function($locationProvider, $routeProvider) {
         templateUrl: "views/projects.html",
         controller: "projectsCtrl"
     })
+    /*.when('/project/:id',{
+        templateUrl: "views/project.html",
+        controller: "projectCtrl"
+    })*/
     .when('/projects/project/:id',{
         templateUrl: "views/project.html",
         controller: "projectCtrl"
@@ -40,7 +49,7 @@ app.controller('aboutCtrl', ["$scope", function($scope){
           name : "Filip Ramstedt",
           title : "Developer",
           image : "img/avatar/filip.jpg",
-          desc : "Console ninja. Kan allt som har med kod att göra och älskar javascript mer än någonting annat på denna jord",
+          desc : "Console ninja. Can everything that has to do with code and loves javascript more than anything on this earth",
           email : "filip@creativecompact.se"
           
       },
@@ -48,7 +57,7 @@ app.controller('aboutCtrl', ["$scope", function($scope){
           name : "Nils Löfgren",
           title : "Designer",
           image : "img/avatar/nils.jpg",
-          desc : "CSS guru. En perfektionist vars ögon blöder om inte lite animationer eller rätt färgkombinationer finns med.",
+          desc : "CSS guru. A perfectionist whose eyes are bleeding if not a little animations or the right color combinations are included.",
           email : "nils@creativecompact.se"
           
       },
@@ -56,7 +65,7 @@ app.controller('aboutCtrl', ["$scope", function($scope){
           name : "Oskar Stålstierna",
           title : "Project manager",
           image : "img/avatar/oskar.jpg",
-          desc : "Extrem chailatte drickare som kan dö för retro manbags och stockholm stad. Organiserad och punktlig tack vare google calender",
+          desc : "Extreme chai latte drinker who can die for retro manbags and Stockholm. Organized and punctual, thanks to Google Calendar",
           email : "oskar@creativecompact.se"
           
       }
@@ -85,32 +94,23 @@ app.controller('articlesCtrl', ["$scope", "$http", "articles", function($scope, 
   }
   
 }]);
-app.controller('contactCtrl', ["$scope", "$http", function($scope, $http){
+app.controller('contactCtrl', ["$scope", function($scope){
     $('body').scrollTop(0,0);
-    
-    $scope.sendMessage = function() {
-        $http.post("/message", {
-            email: $scope.email,
-            name: $scope.name,
-            message: $scope.message
-        }).then(function(data){
-            if(data.data.error == "novalid"){
-                $scope.errormsg = data.data.message;
-            }else{
-                $scope.email = "";
-                $scope.name = "";
-                $scope.message = "";
-                $scope.errormsg = "";
-                $('.message-sucess').css('right', "0");
-                setTimeout(function(){
-                    $('.message-sucess').css('right', '-320px');
-                }, 3000);
-            }
-        },function() {
-            $scope.errormsg = "Ett fel uppstog försök igen!";
-        });
-        
-    }
+ 
+    $scope.init = function() {
+ 
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: new google.maps.LatLng(56.1641 , 14.8811),
+                styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
+            });
+            
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(56.1641 , 14.8811),
+                map: map,
+                title: 'Creative Compact!'
+            });
+    }    
     
 }]);
 app.controller('homeCtrl', ["$scope", "projects", function($scope, projects){
@@ -128,6 +128,8 @@ app.controller('homeCtrl', ["$scope", "projects", function($scope, projects){
 }]);
 app.controller('projectCtrl', ["$scope", "$routeParams", "projects", function($scope, $routeParams, projects){
     $('body').scrollTop(0,0);
+    $scope.test = projects.getProject($routeParams.id);
+    
        
     $scope.projects = projects.getProject($routeParams.id);
     
@@ -140,9 +142,20 @@ app.controller('projectCtrl', ["$scope", "$routeParams", "projects", function($s
     });
   
 }]);
-app.controller('projectsCtrl', ["$scope", "$http", "projects", function($scope, $http, projects){
-    $('body').scrollTop(0,0);
+app.controller('projectsCtrl', ["$scope", "$http", "projects", function ($scope, $http, projects) {
+    $('body').scrollTop(0, 0);
     $scope.projects = projects.getProjects();
+
+    //$scope.filters = "";
+
+    $('.proj-wrapper').masonry({
+        itemSelector: '.project-box'
+    });
+
+    $scope.setFilter = function (filter) {
+        $scope.filters = filter;
+    }
+
 }]);
 app.directive('footer', function() {
   return {
@@ -219,40 +232,40 @@ app.factory('projects', function() {
       {
         //Freddy Hale
           company: "Freddy Hale",
-          genre: "Webb",
+          genre: "Web",
           title : "Freddy Hale",
           thumb : "img/project/freddyHale/thumb.jpg",
-          desc : "Enkel och stilren! Freddy beställde sidan med en klar vision av vad han ville ha och ett nära sammarbete resulterade i en sleek och sexig produkt. Sidan har en klar kännsla som passar en modern och nyskapande artist. Vi känner oss ödmjuka och stolta att ha fått uppdraget att hjälpa Freddy Hale på vägen mot en stjärna på Hollywood Boulevard!",  
+          desc : "Simple and stylish! Freddy ordered this site with a clear vision of what he wanted and close collaboration resulted in a sleek and sexy product. This webpage has a clear will diminish that fits a modern and innovative artist. We are humbled and proud to have been contracted to help Freddy Hale towards a star on Hollywood Boulevard !",  
           coverImage : "www/img/project/FreddyHale/thumb.jpg",
           tools : "Photoshop, Html, Css3",
           date : "4/3-2016",
           site : "http://freddyhale.com",
           images : [
-              "img/project/freddyhale/projImage.jpg"
+              "img/project/freddyHale/projImage.jpg"
           ]
       },
       {
         //Creative coast festival
           company: "Creative Coast Festival",
-          genre: "Webb",
+          genre: "Web",
           title : "Creative Coast Festival",
-          thumb : "img/project/creativecoast/cover.jpg",
-          desc : "Vi byggde en webbsida till Creative coast festival i Karlshamn.",  
+          thumb : "img/project/creativecoast/thumb.jpg",
+          desc : "We built a website for the Creative Coast Festival. Creative Coast Festival is a digital festival based in Karlshamn where the exhibitors in the gaming and web genre from around the world come and exhibit their projects.",  
           coverImage : "www/img/project/creativecoast/cover.jpg",
           tools : "Photoshop, Wordpress",
           date : "15/2-2016",
           site : "http://creativecoastfestival.se/",
           images : [
-              ""
+              "img/project/creativecoast/cover.jpg"
           ]
       },
       {
         //Cural
           company: "Cural",
-          genre: "Webb, Logo",
+          genre: "Web / Logo",
           title : "Cural",
           thumb : "img/project/cural/thumb.jpg",
-          desc : "Cural är ett internt projekt som vi jobbat med i sammarbete med Pontus Johansson, Andreas Lindvall och Viktorija Meinoryte. Visionen med projektet var att skapa en klassisk läkemedelssida med en twist. Vi försöker att utmana klassiska tankesätt och ge konkret exempel på situerad kunskapen genom diskussion. Det är 50% chans att användaren gillar sidan eller inte. In och titta, uppdatera sidan och se vad som händer!",  
+          desc : "Cural is an internal project that we worked on in collaboration with Pontus Johansson , Andreas Lindvall and Viktorija Meinoryte. The vision of the project was to create a classic medical website with a twist. We try to challenge traditional ways of thinking and to provide concrete examples Situated knowledge through discussion.",  
           coverImage : "www/img/project/cural/thumb.jpg",
           tools : "Illustrator, Angular, Html, Css3, C#",
           date : "29/2-2016",
@@ -264,10 +277,10 @@ app.factory('projects', function() {
       //happnings
       {
           company: "happnings",
-          genre: "webb/mobil",
+          genre: "Web",
           title : "happnings",
           thumb : "img/project/happnings/thumb.jpg",
-          desc : "happnings är en applikation som listar alla event i din stad på en central plats. Ett enkelt sätt att se vad som händer omkring dig. Användaren kan söka på stad, kategori, datum, titel, mm för att snabbt hitta ett event. Du kan även gilla för att få en notifiering dagen innan för att inte glömma bort vad du vill gå på. Idén är att göra det lättare för användarna att hitta event samt för arrangörerna att nå ut till en bredare publik än tidigare.  ",  
+          desc : "Happnings is an application that lists all events in your city in a central location . An easy way to see what is happening around you . The user can search by city , category, date, title , etc. to quickly find an event. You may also like to have alerted the day before to not forget what you want to go on . The idea is to make it easier for users to find events as well as for the organizers to reach out to a wider audience than before. ",  
           coverImage : "www/img/project/happnings/cover.jpg",
           tools : "Photoshop, Angular, Ionic",
           date : "15/11-2015",
@@ -279,10 +292,10 @@ app.factory('projects', function() {
       //dotlist
       {
           company: "DotList",
-          genre: "mobil",
+          genre: "Mobile",
           title : "DotList",
           thumb : "img/project/dotlist/thumb.jpg",
-          desc : "DotList är en mobilapplikation där användaren kan skapa inköpslistor eller att-göra-listor. Enkelt lägga till och uppdatera sina listor och synka dem med vänner eller respektive.  ",
+          desc : "DotList is a mobile application which allows users to create shopping lists or to - do lists. Easily add and update their lists and sync them with your friends or family ",
           coverImage : "img/project/dotlist/cover.jpg",
           tools : "Photoshop, Angular, Ionic",
           date : "15/11-2015",
@@ -294,11 +307,11 @@ app.factory('projects', function() {
       //Bjorkeberg
       {
           company: "Björkebergs hembygdsförening",
-          genre: "webb",
+          genre: "Web",
           title : "Björkeberg.com",
           thumb : "img/project/bjorkeberg/thumb.jpg",
           desc : 
-            "Björkebergs hembyggdsförening ville ha en uppfräschning på sin tidigare statiska html-sida. Dem ville att den skulle vara enkel att uppdatera och lägga till nytt innehåll vilket gjorde att vi valde wordpress som verktyg i detta projekt. ",
+            "Björkebergs association wanted a refresher on their previously static html page . They wanted it to be easy to update and add new content , which meant that we chose WordPress as a tool in this project. ",
           
           coverImage : "www/img/project/bjorkeberg/cover.jpg",
           tools : "Photoshop, Wordpress",
