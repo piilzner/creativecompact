@@ -1,5 +1,10 @@
 var app = angular.module('app', ['ngRoute', 'wu.masonry']);
 app.config(function($locationProvider, $routeProvider) {
+    /*$locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+    });*/
+
 	$routeProvider.when('/', {
 		templateUrl: 'views/home.html',
 		controller: 'homeCtrl'
@@ -16,6 +21,10 @@ app.config(function($locationProvider, $routeProvider) {
         templateUrl: "views/projects.html",
         controller: "projectsCtrl"
     })
+    /*.when('/project/:id',{
+        templateUrl: "views/project.html",
+        controller: "projectCtrl"
+    })*/
     .when('/projects/project/:id',{
         templateUrl: "views/project.html",
         controller: "projectCtrl"
