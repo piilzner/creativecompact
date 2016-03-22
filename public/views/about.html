@@ -30,7 +30,9 @@
         <div class="row">
             <div class="col-sm-12 col-md-4" ng-repeat=" worker in workers">
                 <div class="thumbnail">
+                   <div class="avatar-img-thumb">
                     <img src="{{ worker.image }}" alt="...">
+                    </div>
                     <div class="caption">
                         <h3>{{ worker.name }}</h3>
                         <h4>{{ worker.title }}</h4>
@@ -50,9 +52,9 @@
 
 <section class="about-tools">
 
-    <div class="col-sm-12">
+    <div class="col-sm-12 tools-bg" style="margin: 30px 0">
         <i class="fa fa-heart-o"></i>
-        <div class="col-sm-8 centered clearfix" style="margin-bottom: 60px">
+        <div class="col-sm-11 centered clearfix">
             We are not afraid to try new technologies. We adapt for the project but we have of course our favorites when it comes to code language.
         </div>
     </div>

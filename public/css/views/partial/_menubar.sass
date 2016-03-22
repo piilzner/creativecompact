@@ -5,6 +5,8 @@
     left: 0
     top: 0
     z-index: 999
+    @media screen and (max-width: 800px)
+        display: none
     
     .topbar
         text-align: center
@@ -39,9 +41,11 @@
     display: flex
     flex-direction: column
     justify-content: space-between
-    z-index: 3
+    z-index: 1999
     cursor: pointer
     display: none
+    @media screen and (max-width: 800px)
+        display: flex
 
     .ham-one, .ham-two, .ham-three
         width: 100%
@@ -58,7 +62,7 @@
     right: -500px
     width: 500px
     height: 100%
-    z-index: 2
+    z-index: 999
     background: #fff
     display: flex
     border-left: 1px solid #000

@@ -67,6 +67,9 @@ section {
   left: 0;
   top: 0;
   z-index: 999; }
+  @media screen and (max-width: 800px) {
+    .menubar-top {
+      display: none; } }
   .menubar-top .topbar {
     text-align: center;
     height: 40px; }
@@ -107,9 +110,15 @@ section {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  z-index: 3;
+  z-index: 1999;
   cursor: pointer;
   display: none; }
+  @media screen and (max-width: 800px) {
+    .menu-ham {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; } }
   .menu-ham .ham-one, .menu-ham .ham-two, .menu-ham .ham-three {
     width: 100%;
     height: 3px;
@@ -126,7 +135,7 @@ section {
   right: -500px;
   width: 500px;
   height: 100%;
-  z-index: 2;
+  z-index: 999;
   background: #fff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -628,7 +637,7 @@ section {
     #simple-about .about-us-box i {
       font-size: 62px;
       margin: 30px;
-      text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); }
+      text-shadow: 0 5px 5px rgba(0, 0, 0, 0.1); }
     #simple-about .about-us-box .about-title {
       padding: 0 20px; }
       #simple-about .about-us-box .about-title h2 {
@@ -1247,9 +1256,22 @@ h3 {
     font-weight: 600;
     margin-bottom: 60px; }
   .team .thumbnail {
-    border: none; }
+    border: none;
+    text-align: center; }
+    .team .thumbnail .avatar-img-thumb {
+      display: block;
+      margin: 0 auto 30px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden; }
+      .team .thumbnail .avatar-img-thumb img {
+        -webkit-filter: grayscale(100%);
+        width: 100%;
+        height: 100%; }
+        .team .thumbnail .avatar-img-thumb img:hover {
+          -webkit-filter: grayscale(0); }
     .team .thumbnail h3 {
-      text-align: left;
       font-family: 'Roboto';
       font-size: 24px;
       letter-spacing: 0;
@@ -1257,7 +1279,8 @@ h3 {
     .team .thumbnail h4 {
       font-family: 'Roboto';
       font-size: 16px;
-      margin-bottom: 10px; }
+      margin-bottom: 10px;
+      text-align: center; }
     .team .thumbnail a {
       color: #17a19f;
       text-decoration: none;
@@ -1270,17 +1293,18 @@ h3 {
 
 .about-tools {
   text-align: center;
-  padding: 20px;
   margin-bottom: 160px; }
-  .about-tools h3 {
-    font-family: 'Roboto';
-    font-size: 42px;
-    margin: 20px 0;
-    padding: 0;
-    letter-spacing: 0; }
-  .about-tools i {
-    font-size: 40px;
-    margin-bottom: 30px; }
+  .about-tools .tools-bg {
+    padding: 100px 30px;
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 150px !important;
+    background-image: url("../img/cta-pattern.jpg");
+    background-position: center center;
+    background-attachment: fixed; }
+    .about-tools .tools-bg i {
+      font-size: 70px;
+      margin-bottom: 30px; }
   .about-tools .tools-desc {
     width: 100%;
     text-align: center;
@@ -1288,6 +1312,12 @@ h3 {
     font-family: 'roboto';
     font-size: 18px;
     font-weight: 100; }
+  .about-tools h3 {
+    font-family: 'Roboto';
+    font-size: 42px;
+    margin: 20px 0;
+    padding: 0;
+    letter-spacing: 0; }
   .about-tools .container {
     margin: 50px auto; }
     .about-tools .container .row .thumbnail {
@@ -1314,7 +1344,10 @@ h3 {
 
 .contact {
   margin-bottom: 160px;
-  padding: 30px; }
+  padding: 30px 30px 140px; }
+  @media screen and (max-width: 420px) {
+    .contact {
+      margin-bottom: 200px; } }
   .contact h3 {
     font-family: 'Roboto';
     font-size: 22px;

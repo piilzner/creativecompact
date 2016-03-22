@@ -41,9 +41,24 @@ h3
         
     .thumbnail
         border: none
+        text-align: center
+        
+        .avatar-img-thumb
+            display: block
+            margin: 0 auto 30px
+            width: 200px
+            height: 200px
+            border-radius: 50%
+            overflow: hidden
+            
+            img
+                -webkit-filter: grayscale(100%)
+                width: 100%
+                height: 100%
+                &:hover
+                    -webkit-filter: grayscale(0)
         
         h3
-            text-align: left
             +standard(24px)
             letter-spacing: 0
             margin: 0
@@ -51,6 +66,7 @@ h3
         h4
             +standard(16px)
             margin-bottom: 10px
+            text-align: center
             
         a
             color: $blue
@@ -66,19 +82,22 @@ h3
         
 .about-tools
     text-align: center
-    padding: 20px
     margin-bottom: 160px
     
-    h3
-        +standard(42px)
-        margin: 20px 0
-        padding: 0
-        letter-spacing: 0
+    .tools-bg
+        padding: 100px 30px
+        font-size: 30px
+        color: #fff
+        margin-bottom: 150px!important
+        background:
+            image: url('../img/cta-pattern.jpg')
+            position: center center
+            attachment: fixed
         
 
-    i
-        font-size: 40px
-        margin-bottom: 30px
+        i
+            font-size: 70px
+            margin-bottom: 30px
 
     .tools-desc
         width: 100%
@@ -88,6 +107,12 @@ h3
             family: 'roboto'
             size: 18px
             weight: 100
+                
+    h3
+        +standard(42px)
+        margin: 20px 0
+        padding: 0
+        letter-spacing: 0
 
 
     .container
