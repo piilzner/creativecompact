@@ -1,9 +1,9 @@
 var app = angular.module('app', ['ngRoute', 'wu.masonry']);
 app.config(function($locationProvider, $routeProvider) {
-    $locationProvider.html5Mode({
+    /*$locationProvider.html5Mode({
         enabled: true,
         requireBase: false
-    });
+    });*/
 
 	$routeProvider.when('/', {
 		templateUrl: 'views/home.html',
@@ -21,6 +21,10 @@ app.config(function($locationProvider, $routeProvider) {
         templateUrl: "views/projects.html",
         controller: "projectsCtrl"
     })
+    /*.when('/project/:id',{
+        templateUrl: "views/project.html",
+        controller: "projectCtrl"
+    })*/
     .when('/projects/project/:id',{
         templateUrl: "views/project.html",
         controller: "projectCtrl"
@@ -124,6 +128,8 @@ app.controller('homeCtrl', ["$scope", "projects", function($scope, projects){
 }]);
 app.controller('projectCtrl', ["$scope", "$routeParams", "projects", function($scope, $routeParams, projects){
     $('body').scrollTop(0,0);
+    $scope.test = projects.getProject($routeParams.id);
+    
        
     $scope.projects = projects.getProject($routeParams.id);
     
