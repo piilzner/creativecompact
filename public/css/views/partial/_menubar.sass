@@ -1,3 +1,35 @@
+.menubar-top
+    background: rgba(0,0,0,0.9)
+    width: 100%
+    position: fixed
+    left: 0
+    top: 0
+    z-index: 999
+    
+    .topbar
+        text-align: center
+        height: 40px
+        
+
+        .links
+            color: #fff
+            line-height: 3.5
+            height: 100%
+            +standard(12px)
+            font-weight: bold
+            cursor: pointer
+            text-transform: uppercase
+            &:hover
+                color: $blue
+                background: rgba(255,255,255,0.1)
+            
+
+        .top-logo
+            padding-top: 5px
+            img
+                width: 70px
+                height: auto
+
 .menu-ham
     position: fixed
     top: 30px

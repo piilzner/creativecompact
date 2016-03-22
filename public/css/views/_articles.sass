@@ -23,29 +23,29 @@
             width: 100%
             padding: 10px
             
-    .genre-wrapper
-        width: 100%
-        +flex(center)
-        
-        .genre-btn
-            padding: 10px 20px
-            border: 1px solid #2b2b2b
-            border-radius: 3px
-            margin-right: 10px
-            cursor: pointer
-            transition: all .3s cubic-bezier(0.55, 0.06, 0.68, 0.19)
-            &:hover
-                background: #2b2b2b
-                color: #fff
-            &:nth-last-child(1)
-                margin-right: 0
-            @media screen and (max-width: 415px)
-                padding: 5px 10px
-                margin-right: 5px
-        
-        .active
+.genre-wrapper
+    width: 100%
+    +flex(center)
+
+    .genre-btn
+        padding: 10px 20px
+        border: 1px solid #2b2b2b
+        border-radius: 3px
+        margin-right: 10px
+        cursor: pointer
+        transition: all .3s cubic-bezier(0.55, 0.06, 0.68, 0.19)
+        &:hover
             background: #2b2b2b
             color: #fff
+        &:nth-last-child(1)
+            margin-right: 0
+        @media screen and (max-width: 415px)
+            padding: 5px 10px
+            margin-right: 5px
+
+    .active
+        background: #2b2b2b
+        color: #fff
         
     .box-wrapper
         width: 80%
