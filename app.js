@@ -7,6 +7,8 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
+//mongoose.connect('mongodb://127.0.0.1:27017/creativecompact');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -19,8 +21,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', require('./routes/index'));
-app.use('/admin', require('./routes/admin'));
-app.use('/auth', require('./routes/auth'));
+//app.use('/admin', require('./routes/admin'));
+//app.use('/auth', require('./routes/auth'));
 
 /*app.all('/*', function(req, res) {
     res.render('index.ejs', { title: 'Creative Compact, Webdevelopment' });

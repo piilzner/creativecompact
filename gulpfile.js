@@ -5,9 +5,9 @@ var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 
-gulp.task('default', ['css', 'js']);
+gulp.task('default', ['sass', 'js']);
 
-gulp.task('css', function() {
+gulp.task('sass', function() {
   watch('./public/css/**/*.sass', function (event) {
         console.log('File ' + event.path + ' was changed');
         gulp.src('./public/css/**/*.sass')
