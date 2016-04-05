@@ -1,28 +1,19 @@
-app.controller('contactCtrl', ["$scope", "$http", function($scope, $http){
+app.controller('contactCtrl', ["$scope", function($scope){
     $('body').scrollTop(0,0);
-    
-    $scope.sendMessage = function() {
-        $http.post("/message", {
-            email: $scope.email,
-            name: $scope.name,
-            message: $scope.message
-        }).then(function(data){
-            if(data.data.error == "novalid"){
-                $scope.errormsg = data.data.message;
-            }else{
-                $scope.email = "";
-                $scope.name = "";
-                $scope.message = "";
-                $scope.errormsg = "";
-                $('.message-sucess').css('right', "0");
-                setTimeout(function(){
-                    $('.message-sucess').css('right', '-320px');
-                }, 3000);
-            }
-        },function() {
-            $scope.errormsg = "Ett fel uppstog försök igen!";
-        });
-        
-    }
+ 
+    $scope.init = function() {
+ 
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: new google.maps.LatLng(56.1641 , 14.8811),
+                styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
+            });
+            
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(56.1641 , 14.8811),
+                map: map,
+                title: 'Creative Compact!'
+            });
+    }    
     
 }]);

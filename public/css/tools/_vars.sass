@@ -3,15 +3,55 @@
 
 
 $blue: #17a19f
+//rgba(23,161,159,0.3) 
 
 
+.centered
+    margin: 0 auto
+    float: none
+    
+.clearfix
+    clear: both
 
 
 section
-    width: 100vw
+    width: 100%
     height: auto
+    background: #fff
+    padding: 60px 0
     
+.last-section
+    margin-bottom: 160px
+    @media screen and(max-width: 500px)
+        margin-bottom: 300px
 
+    
+.cta-white
+    +standard(18px)
+    color: #fff
+    padding: 10px 20px
+    border: 2px solid #fff
+    background: none
+    border-radius: 3px
+    transition: all .3s ease-in-out
+    cursor: pointer
+    &:hover
+        padding: 10px 40px
+        background: rgba(255,255,255,0.3)
+    
+.cta-color
+    +standard(18px)
+    color: $blue
+    padding: 10px 20px
+    border: 2px solid $blue
+    background: none
+    border-radius: 3px
+    transition: all .3s ease-in-out
+    cursor: pointer
+    &:hover
+        padding: 10px 40px
+        background: rgba(23,161,159,0.3)
+        color: $blue
     
 @mixin flex($type)
     display: flex 

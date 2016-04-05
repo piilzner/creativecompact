@@ -1,26 +1,40 @@
 <menubar></menubar>
 <footer></footer>
 <section class="projects">
-    <h2>Projekt</h2>
-    <h3>Jobb vi utfört.</h3>
+    <div class="row">
+        <div class="col-sm-10 centered clearfix">
+            <h2>Work</h2>
+            <h3>Some of our showcase</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm 10 centered clearfix">
+            <div class="genre-wrapper">
+                <div ng-click="setFilter('')" class="genre-btn" ng-class="(filters == '')? 'active' : ''">All</div>
+                <div ng-click="setFilter('Web')" class="genre-btn" ng-class="(filters == 'Web')? 'active' : ''">Web</div>
+                <div ng-click="setFilter('Logo')" class="genre-btn" ng-class="(filters == 'Logo')? 'active' : ''">Logo</div>
+                <div ng-click="setFilter('Mobile')" class="genre-btn" ng-class="(filters == 'Mobile')? 'active' : ''">Mobile</div>
+
+            </div>
+        </div>
+    </div>
+
+    <div masonry class="row" style="margin-top: 20px">
+        <div class="col-sm-12 proj-wrapper">
+            <div class="col-sm-4 project-box masonry-brick" ng-repeat="project in projects | filter: filters">
+                <div class="project-img">
+                    <img src="{{ project.thumb }}" alt="">
+                </div>
+                <a ng-href="#/projects/project/{{$index}}">
+                    <div class="project-overlay">
+                        <div class="overlay-title">{{ project.company }}</div>
+                        <span>{{ project.genre }}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
     
-  <div class="row">
-   <div class="col-sm-12">
-    <div ng-repeat="project in projects" class="col-md-6 project-container">
-      <div class="project-img">
-          <img src="{{ project.thumb }}" alt="">
-      </div>
-      <a ng-href="#/projects/project/{{$index}}">
-          <div class="comp-box">
-              <div class="comp-title">{{ project.company }}</div>
-              <span>{{ project.genre }}</span>
-          </div>
-      </a>
-      </div>
-  </div>
-</div>
-    
+
 </section>
-
-
 

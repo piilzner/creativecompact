@@ -6,7 +6,7 @@ app.controller('aboutCtrl', ["$scope", function($scope){
           name : "Filip Ramstedt",
           title : "Developer",
           image : "img/avatar/filip.jpg",
-          desc : "Console ninja. Kan allt som har med kod att göra och älskar javascript mer än någonting annat på denna jord",
+          desc : "Console ninja. Can everything that has to do with code and loves javascript more than anything on this earth",
           email : "filip@creativecompact.se"
           
       },
@@ -14,7 +14,7 @@ app.controller('aboutCtrl', ["$scope", function($scope){
           name : "Nils Löfgren",
           title : "Designer",
           image : "img/avatar/nils.jpg",
-          desc : "CSS guru. En perfektionist vars ögon blöder om inte lite animationer eller rätt färgkombinationer finns med.",
+          desc : "CSS guru. A perfectionist whose eyes are bleeding if not a little animations or the right color combinations are included.",
           email : "nils@creativecompact.se"
           
       },
@@ -22,7 +22,7 @@ app.controller('aboutCtrl', ["$scope", function($scope){
           name : "Oskar Stålstierna",
           title : "Project manager",
           image : "img/avatar/oskar.jpg",
-          desc : "Extrem chailatte drickare som kan dö för retro manbags och stockholm stad. Organiserad och punktlig tack vare google calender",
+          desc : "Extreme chai latte drinker who can die for retro manbags and Stockholm. Organized and punctual, thanks to Google Calendar",
           email : "oskar@creativecompact.se"
           
       }
