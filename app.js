@@ -19,8 +19,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', require('./routes/index'));
-app.use('/admin', require('./routes/admin'));
-app.use('/auth', require('./routes/auth'));
+//app.use('/admin', require('./routes/admin'));
+//app.use('/auth', require('./routes/auth'));
 
 /*app.all('/*', function(req, res) {
     res.render('index.ejs', { title: 'Creative Compact, Webdevelopment' });
