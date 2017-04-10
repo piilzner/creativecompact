@@ -23,12 +23,10 @@
 
 
 <section class="team">
-    <div class="row">
-        <h2>Our team!</h2>
-    </div>
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-4" ng-repeat=" worker in workers">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="col-sm-12 col-md-6" ng-repeat=" worker in workers">
                 <div class="thumbnail">
                    <div class="avatar-img-thumb">
                     <img src="{{ worker.image }}" alt="...">
@@ -45,7 +43,7 @@
                     </div>
                 </div>
             </div>
-
+          </div>
         </div>
     </div>
 </section>

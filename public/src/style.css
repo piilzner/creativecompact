@@ -98,16 +98,13 @@ section {
   width: 40px;
   height: 30px;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   z-index: 1999;
@@ -116,7 +113,6 @@ section {
   @media screen and (max-width: 800px) {
     .menu-ham {
       display: -webkit-box;
-      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex; } }
   .menu-ham .ham-one, .menu-ham .ham-two, .menu-ham .ham-three {
@@ -138,17 +134,14 @@ section {
   z-index: 999;
   background: #fff;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   border-left: 1px solid #000;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-transition: all .3s ease-in-out;
@@ -157,15 +150,12 @@ section {
     width: 100%;
     height: 100px;
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
-    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     margin-top: 10px; }
@@ -188,15 +178,12 @@ section {
       width: 100%;
       height: 50px;
       display: -webkit-box;
-      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
       -webkit-box-pack: center;
-      -webkit-justify-content: center;
           -ms-flex-pack: center;
               justify-content: center;
       -webkit-box-align: center;
-      -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center;
       color: #2b2b2b;
@@ -260,15 +247,12 @@ section {
       margin: 0 15%;
       padding: 0 30px;
       display: -webkit-box;
-      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
       -webkit-box-pack: justify;
-      -webkit-justify-content: space-between;
           -ms-flex-pack: justify;
               justify-content: space-between;
       -webkit-box-align: center;
-      -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center; }
       .menu .menu-footer .social-icons a {
@@ -322,20 +306,16 @@ section {
     -webkit-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out;
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     color: #fff;
@@ -401,20 +381,16 @@ section {
     -webkit-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out;
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     color: #fff;
@@ -503,15 +479,12 @@ section {
     top: 50%;
     margin-top: -23px;
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
     -webkit-box-align: center;
-    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     width: auto; }
@@ -527,11 +500,9 @@ section {
       width: 40px;
       height: 40px;
       display: -webkit-box;
-      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
       -webkit-box-pack: end;
-      -webkit-justify-content: flex-end;
           -ms-flex-pack: end;
               justify-content: flex-end; }
       .footer .footer-links .footer-social a {
@@ -602,15 +573,12 @@ section {
     font-size: 20px;
     color: #fff;
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
-    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     -webkit-transition: all 0.3s ease-in-out;
@@ -642,7 +610,7 @@ section {
   z-index: 1; }
   @media screen and (max-width: 520px) {
     #simple-about {
-      margin-bottom: 185px; } }
+      padding-bottom: 80px; } }
   #simple-about h2 {
     font-family: 'Roboto';
     font-size: 42px;
@@ -689,21 +657,17 @@ section {
 #recent-projects .recent-projects {
   width: 100%;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
           justify-content: flex-start;
   -webkit-box-align: center;
-  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column; }
   #recent-projects .recent-projects .proj-title {
@@ -714,15 +678,12 @@ section {
   #recent-projects .recent-projects .proj-box {
     width: 100%;
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
-    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     border: 1px solid #000;
@@ -786,21 +747,17 @@ section {
   min-height: 100vh;
   overflow: scroll;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-bottom: 175px;
   background: #fff; }
   .articles h2 {
@@ -821,15 +778,12 @@ section {
 .genre-wrapper {
   width: 100%;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
-  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; }
   .genre-wrapper .genre-btn {
@@ -887,7 +841,7 @@ section {
         z-index: 9; }
   @media screen and (max-width: 520px) {
     .genre-wrapper {
-      margin-bottom: 170px; } }
+      margin-bottom: 20px; } }
   @media screen and (max-width: 400px) {
     .genre-wrapper .box-wrapper {
       width: 98%;
@@ -898,20 +852,16 @@ section {
 .article {
   min-height: 100vh;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
-  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   background: #fff;
@@ -919,22 +869,18 @@ section {
   .article .article-title {
     width: 60%;
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
-    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     margin-top: 50px;
     padding: 10px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column; }
     .article .article-title img {
@@ -1016,20 +962,16 @@ section {
       -webkit-transition: all 300ms ease-in-out;
       transition: all 300ms ease-in-out;
       display: -webkit-box;
-      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
       -webkit-box-align: center;
-      -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center;
       -webkit-box-pack: center;
-      -webkit-justify-content: center;
           -ms-flex-pack: center;
               justify-content: center;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
           -ms-flex-direction: column;
               flex-direction: column;
       color: #fff;
@@ -1048,24 +990,19 @@ section {
     width: 90%;
     margin: 0 5%;
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap; }
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
     @media screen and (max-width: 1435px) {
       .projects .project-wrap {
         -webkit-box-pack: center;
-        -webkit-justify-content: center;
             -ms-flex-pack: center;
                 justify-content: center; } }
   .projects a {
@@ -1096,31 +1033,25 @@ section {
 .project {
   min-height: 100vh;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   background: #fff;
   margin-bottom: 175px; }
   .project .project-img {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
-    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     padding: 0;
@@ -1142,16 +1073,13 @@ section {
     position: relative; }
     .project .proj-container .proj-content, .project .proj-container .proj-images {
       display: -webkit-box;
-      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
       -webkit-box-align: start;
-      -webkit-align-items: flex-start;
           -ms-flex-align: start;
               align-items: flex-start;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
           -ms-flex-direction: column;
               flex-direction: column; }
       .project .proj-container .proj-content img, .project .proj-container .proj-images img {
@@ -1403,20 +1331,16 @@ h3 {
   transition: all .3s ease-in-out;
   width: 320px;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
-  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   background: #17a19f;
