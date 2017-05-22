@@ -1,22 +1,23 @@
+<!-- Navbar
+ ============================================================ -->
 <menubar></menubar>
 
+<!-- Article section
+ ============================================================ -->
 <section class="articles">
-   
     <h2>Artiklar</h2>
     <h3>Här kan ni läsa om saker vi testar, skapar eller gör på Creative Compact.</h3>
-    
     <div class="genre-wrapper">
-        
         <div ng-click="setFilter('')" class="genre-btn" ng-class="(filters == '')? 'active' : ''">alla</div>
         <div ng-click="setFilter('webb')" class="genre-btn" ng-class="(filters == 'webb')? 'active' : ''">webb</div>
         <div ng-click="setFilter('kod')" class="genre-btn" ng-class="(filters == 'kod')? 'active' : ''">kod</div>
         <div ng-click="setFilter('mobil')" class="genre-btn" ng-class="(filters == 'mobil')? 'active' : ''">mobil</div>
         <div ng-click="setFilter('design')" class="genre-btn" ng-class="(filters == 'design')? 'active' : ''">design</div>
-        
     </div>
-    
+
+    <!-- Masonry articles wrapper
+     ============================================================ -->
     <div masonry class="box-wrapper">
-       
         <div class="box masonry-brick" ng-repeat=" article in articles | filter: filters">
             <a ng-href="#/articles/article/{{$index}}">
                 <img src="{{ article.image }}" alt="">
@@ -25,11 +26,12 @@
                      <span ng-repeat=" genre in article.genre">#{{ genre }}</span>
                  </div>
                  <span>{{ article.date}}</span>
-                 
             </a>
         </div>
-        
     </div>
-    
+
 </section>
+
+<!-- Footer 
+ ============================================================ -->
 <footer></footer>

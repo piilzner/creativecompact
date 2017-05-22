@@ -1,11 +1,14 @@
-
+<!-- Navbar
+ ============================================================ -->
 <menubar></menubar>
 
+<!-- Project info
+ ============================================================ -->
 <section class="project">
-
- 
     <h2>{{ projects.title }}</h2>
-    
+
+    <!-- Sidebar
+     ============================================================ -->
     <div class="proj-container">
         <div class="col-xs-12 col-md-3 proj-content" style="padding: 50px">
             <div class="proj-info">
@@ -24,18 +27,26 @@
                 <p style="font-weight: 300">{{ projects.desc }}</p>
             </div>
         </div>
+
+        <!-- Project images
+         ============================================================ -->
         <div class="col-xs-12 col-md-9 proj-images">
             <div class="img-container" ng-repeat=" img in projects.images">
                 <img src="{{ img }}" alt="">
             </div>
         </div>
     </div>
+
+    <!-- Go back button
+     ============================================================ -->
     <a ng-href="#/projects" style="margin-top: 60px">
-            <div class="cta-color">
-                <i class="fa fa-chevron-left"></i>
-                Go back
-            </div>
-        </a>
-    
+        <div class="cta-color">
+            <i class="fa fa-chevron-left"></i>
+            Go back
+        </div>
+    </a>
 </section>
+
+<!-- Footer 
+ ============================================================ -->
 <footer></footer>

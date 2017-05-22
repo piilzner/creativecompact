@@ -1,10 +1,11 @@
 app.controller('projectCtrl', ["$scope", "$routeParams", "projects", function($scope, $routeParams, projects){
     $('body').scrollTop(0,0);
     $scope.test = projects.getProject($routeParams.id);
-    
-       
+
+    /* Get specific project */
     $scope.projects = projects.getProject($routeParams.id);
-    
+
+    /* Make page scroll to top */
     $(window).scroll(function(){
         if ($(window).scrollTop() >= $('.project-img').height) {
             $('.proj-content').css({'position' : 'fixed'});
@@ -12,5 +13,5 @@ app.controller('projectCtrl', ["$scope", "$routeParams", "projects", function($s
             $('.proj-content').css({'position' : 'relative'});
         }
     });
-  
+
 }]);

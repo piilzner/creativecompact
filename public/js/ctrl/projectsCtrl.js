@@ -2,12 +2,12 @@ app.controller('projectsCtrl', ["$scope", "$http", "projects", function ($scope,
     $('body').scrollTop(0, 0);
     $scope.projects = projects.getProjects();
 
-    //$scope.filters = "";
-
+    /* Masonry wrapper */
     $('.proj-wrapper').masonry({
         itemSelector: '.project-box'
     });
 
+    /* Project filter */
     $scope.setFilter = function (filter) {
         $scope.filters = filter;
     }

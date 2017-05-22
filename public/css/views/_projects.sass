@@ -4,34 +4,34 @@
     padding-bottom: 80px
     margin-bottom: 140px
     h2
-        +standard(42px)
-        font-weight: bold
-        text-align: center
-        
+      +standard(42px)
+      font-weight: bold
+      text-align: center
+
     h3
-        +standard(14px)
-        font-weight: 300
-        margin-top: 10px
-        letter-spacing: 0
-        
+      +standard(14px)
+      font-weight: 300
+      margin-top: 10px
+      letter-spacing: 0
+
     .genre-btn
-        padding: 10px 20px
-        border: 2px solid #2b2b2b
-        border-radius: 3px
-        margin-right: 10px
-        cursor: pointer
-        transition: all .3s cubic-bezier(0.55, 0.06, 0.68, 0.19)
-        &:hover
-            background: $blue
-            color: #fff
-        &:nth-last-child(1)
-            margin-right: 0
-            
-    .active
+      padding: 10px 20px
+      border: 2px solid #2b2b2b
+      border-radius: 3px
+      margin-right: 10px
+      cursor: pointer
+      transition: all .3s cubic-bezier(0.55, 0.06, 0.68, 0.19)
+      &:hover
         background: $blue
         color: #fff
-        
-        
+      &:nth-last-child(1)
+        margin-right: 0
+
+    .active
+      background: $blue
+      color: #fff
+
+
     .project-box
         position: relative
         padding: 0
@@ -42,7 +42,7 @@
             img
                 width: 100%
                 height: auto
-                
+
         .project-overlay
             position: absolute
             top: 0
@@ -66,10 +66,10 @@
             span
                 +standard(20px)
                 color: $blue
-                
-        
-        
-            
+
+
+
+
     .project-wrap
         width: 90%
         margin: 0 5%
@@ -79,18 +79,18 @@
         flex-wrap: wrap
         @media screen and (max-width: 1435px)
             justify-content: center
-            
+
     a
         text-decoration: none
         margin: 0
         padding: 0
-        
-    
+
+
     @media screen and (max-width: 615px)
         padding: 10px 0 100px
     @media screen and (max-width: 520px)
         margin-bottom: 170px
-    
+
 
 .project-box:hover
     .project-img
@@ -102,4 +102,3 @@
         transform: scale(1)
     .comp-box
         opacity: 1
-        

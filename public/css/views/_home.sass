@@ -1,19 +1,17 @@
- 
+
 .container-fluid
   height: 100%
   display: table
   width: 100%
   padding: 0
 
- 
-.row-fluid 
+
+.row-fluid
     height: 100%
     display: table-cell
     vertical-align: middle
- 
- 
 
-.centering 
+.centering
   float: none
   margin: 0 auto
 
@@ -21,12 +19,12 @@
     position: relative
     width: 100%
     height: 100vh
-    background: 
+    background:
         image: url('../img/introbg.jpg')
         size: cover
         position: center center
         attachment: fixed
-        
+
     .intro-container
         position: absolute
         top: 0%
@@ -37,8 +35,7 @@
         padding-top: 60px
         color: #fff
         z-index: 99
-    
-    
+
         .intro-logo
             margin: 0 auto
             img
@@ -56,7 +53,7 @@
                 font-weight: 300
                 letter-spacing: 3px
                 text-transform: uppercase
-        
+
     #scroll-down
         position: absolute
         bottom: 20px
@@ -72,149 +69,81 @@
         z-index: 999
         &:hover
             bottom: 10px
-        
-    
-        
+
 #simple-about
     height: auto
     background: #fff
     z-index: 1
     @media screen and (max-width: 520px)
         margin-bottom: 185px
-        
+
     h2
         +standard(42px)
         font-weight: bold
         text-align: center
-        
-        
+
     .about-us-box
         margin: 50px 0
         text-align: center
-        
+
         i
             font-size: 62px
             margin: 30px
             text-shadow: 0 5px 5px rgba(0,0,0,0.1)
-        
+
         .about-title
             padding: 0 20px
-            
+
             h2
                 margin: 10px 0
                 +standard(22px)
                 font-weight: 300
-            
-        
-        
+
         .about-us-desc
             padding: 5px 20px
-    
-        
-                
-        
+
 #contact-cta
-    
     background:
         image: url('../img/cta-pattern.jpg')
         size: cover
     padding: 80px 0
     text-align: center
-    
+
     h2
         font-size: 42px
         padding: 20px
         color: #fff
         margin-bottom: 30px
         text-shadow: 2px 2px 10px rgba(0,0,0,0.1)
-        
+
     a
         text-decoration: none
-        
-        
+
 #recent-projects
-    
     h2
         +standard(42px)
         font-weight: bold
         text-align: center
         margin-bottom: 80px
-        
+
     .recent-projects
         width: 100%
         +flex(flex-start)
         display: flex
         flex-direction: column
-        
+
         .proj-title
             +txt(14px)
             text-transform: uppercase
             color: $blue
-        
-        
+
+
         .proj-box
             width: 100%
             +flex(center)
             border: 1px solid #000
             color: #000
             margin-bottom: 50px
-            
+
     a
         text-decoration: none
-            
-                
-        
-.referal
-    padding: 50px 0
-    margin-bottom: 140px
-    background:
-        image: url('../img/cta-pattern.jpg')
-        position: center center
-        attachment: fixed
-    
-    h1
-        text-align: center
-        +standard(48px)
-        margin: 40px
-        color: #fff
-        text-shadow: 2px 2px 2px rgba(0,0,0,0.3)
-        
-    h3
-        text-align: center
-        color: #222
-        margin: 25px 0 15px
-        letter-spacing: 0
-        +standard(20px)
-        
-    .referal-card
-        width: 90%
-        margin: 0 auto
-        background: rgba(255,255,255,0.9)
-        box-shadow: 2px 5px 5px rgba(0,0,0,0.3)
-        border-radius: 3px
-        box-sizing: border-box
-        padding: 20px
-    
-        .referal-logo
-            width: 100px
-            height: 100px
-            border-radius: 50%
-            overflow: hidden
-            margin: 0 auto
-            box-shadow: 2px 5px 5px rgba(0,0,0,0.3)
-            img
-                width: 100%
-                height: 100%
-            
-            
-        .referal-title
-            +standard(12px)
-            display: block
-            text-align: center
-            margin: -10px 0 10px
-
-        .referal-desc
-            color: #222
-            text-align: center
-            +standard(14px)
-        

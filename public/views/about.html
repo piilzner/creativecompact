@@ -24,7 +24,7 @@
 
 <section class="team">
     <div class="row">
-        <h2>Our team!</h2>
+        <h2 style="text-align: center;">Our team!</h2>
     </div>
     <div class="container">
         <div class="row">
@@ -37,11 +37,10 @@
                         <h3>{{ worker.name }}</h3>
                         <h4>{{ worker.title }}</h4>
                         <p>{{ worker.desc }}</p>
-                            <a href="mailto:{{ worker.email }}">
-                                <i class="fa fa-envelope"></i>
-                                <span>{{ worker.email }}</span>
-                            </a>
-
+                        <a href="mailto:{{ worker.email }}">
+                            <i class="fa fa-envelope"></i>
+                            <span>{{ worker.email }}</span>
+                        </a>
                     </div>
                 </div>
             </div>
